@@ -1,0 +1,8 @@
+.login.form--container {
+    max-width: 25%;
+}
+
+fieldset.login {
+    display: flex;
+    justify-self: space-between;
+}

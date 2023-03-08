@@ -1,0 +1,15 @@
+.home--container {
+    display: flex;
+    justify-content: space-around;
+}
+section.agenda {
+    border: 2px solid black;
+}
+
+section.agenda--event {
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin-bottom: 3px;
+    margin-inline: 2px;
+    padding-inline: 5px;
+}
