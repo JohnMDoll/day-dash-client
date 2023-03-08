@@ -9,7 +9,7 @@ export const Home = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
     const [events, setEvents] = useState([])
     // const [userAgenda, setUserAgenda] = useState([])
-    const [changeEvent, setChangeEvent] = useState(false)
+    const [editingEvent, setEditingEvent] = useState(false)
     const [eventToChange, setEventToChange] = useState({})
 
     useEffect(() => {
@@ -24,8 +24,7 @@ export const Home = () => {
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
-        <h1>Welcome {user.firstName || ""}</h1>
-        {changeEvent && <p>words</p>}
+        <h1>Welcome {user.firstName || "friend"}</h1>
         <article className="home--container">
             <section className="home weather--container">
                 <h3 className="weather--header">Your Weather</h3>
@@ -33,14 +32,14 @@ export const Home = () => {
             </section>
             <section className="home schedule--container">
                 <h3 className="schedule--header">Your Events</h3>
-                {changeEvent ?
-                    <EventForm close={setChangeEvent} />
+                {editingEvent ?
+                    <EventForm close={setEditingEvent} event={eventToChange} setEventToChange={setEventToChange}/>
                     :
                     <>
                         {/* {userAgenda} */}
-                        <Agenda events={events} />
+                        <Agenda events={events} eventToChange={setEventToChange} setEditingEvent={setEditingEvent}/>
                         <button className="new--event"
-                            onClick={(e) => setChangeEvent(!changeEvent)}>
+                            onClick={(e) => setEditingEvent(!editingEvent)}>
                             Add Event
                         </button>
                     </>

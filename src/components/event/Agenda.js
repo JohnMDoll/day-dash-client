@@ -1,9 +1,5 @@
-import { useState } from "react"
 
-
-export const Agenda = ({events = []}) => {
-
-    const [testss, set] =useState(false)
+export const Agenda = ({eventToChange, setEditingEvent, events = []}) => {
 
     const agenda = (<section className="agenda">
         {
@@ -34,7 +30,7 @@ export const Agenda = ({events = []}) => {
                             </div>
                         </div>
                         <div className="button--container">
-                            <button className="event--edit" onClick={() => console.log("test")}>✏</button>
+                            <button className="event--edit" onClick={() => [eventToChange(e), setEditingEvent(true)]}>✏</button>
                             <button className="event--comment">💬</button>
                             <button className="event--delete">✖</button>
                         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const EventForm = ({ close, event = {} }) => {
+export const EventForm = ({ close, setEventToChange, event = {} }) => {
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -24,6 +24,7 @@ export const EventForm = ({ close, event = {} }) => {
     }
 
     const closeForm = () => {
+        setEventToChange({}) //on cancel, clear event being edited from memory to avoid populating form in Add New case
         close(false)
     }
 
@@ -34,10 +35,11 @@ export const EventForm = ({ close, event = {} }) => {
                     Title:
                 </label>
                 <input type="text"
+                    className="event form--field"
                     id="nameInput"
                     required autoFocus
-                    className="event form--field"
                     placeholder="Event Title"
+                    value={event.name}
                     onChange={(e) => setFormEvent({ ...formEvent, name: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -45,9 +47,10 @@ export const EventForm = ({ close, event = {} }) => {
                     Description:
                 </label>
                 <input type="description"
-                    id="descriptionInput"
                     className="event form--field"
+                    id="descriptionInput"
                     placeholder="Event Description"
+                    value={event.description}
                     onChange={(e) => setFormEvent({ ...formEvent, description: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -55,9 +58,10 @@ export const EventForm = ({ close, event = {} }) => {
                     Location:
                 </label>
                 <input type="address"
-                    id="locationInput"
                     className="event form--field"
+                    id="locationInput"
                     placeholder="1234 Steve's Place Blvd."
+                    value={event.location}
                     onChange={(e) => setFormEvent({ ...formEvent, location: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -65,9 +69,10 @@ export const EventForm = ({ close, event = {} }) => {
                     Starting:
                 </label>
                 <input type="datetime-local"
+                    className="event form--field"
                     id="startInput"
                     required
-                    className="event form--field"
+                    value={event.startDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, start: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -75,8 +80,9 @@ export const EventForm = ({ close, event = {} }) => {
                     Ending:
                 </label>
                 <input type="datetime-local"
-                    id="endingInput"
                     className="event form--field"
+                    id="endingInput"
+                    value={event.endDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, firstName: e.target.value })} />
             </fieldset>
             <fieldset className="event">
