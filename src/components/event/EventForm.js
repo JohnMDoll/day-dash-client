@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const EventForm = ({ event = "" }) => {
+export const EventForm = ({ close, event = "" }) => {
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -14,13 +14,16 @@ export const EventForm = ({ event = "" }) => {
         if (event !== "") {
             setFormEvent(event)
         }
-    }, []
+    }, [event]
     )
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        // await (register? registerUser(newUser) : loginUser(user))
-        // if (localStorage.getItem("dd_user")) {navigate("/home")}
+        await (console.log("placeholder"))
+    }
+
+    const closeForm = () => {
+        close(false)
     }
 
     return <section className="event form--container">
@@ -53,7 +56,7 @@ export const EventForm = ({ event = "" }) => {
                 <input type="address"
                     id="locationInput"
                     className="event form--field"
-                    placeholder="location@domain.com"
+                    placeholder="1234 Steve's Place Blvd."
                     onChange={(e) => setFormEvent({ ...formEvent, location: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -83,7 +86,10 @@ export const EventForm = ({ event = "" }) => {
             </fieldset>
             <div className="event button--container">
                 <button type="submit" className="eventFormSubmit--button">Submit</button>
-                <button type="cancel" className="eventFormCancel--button">Cancel</button>
+                <button type="button" className="eventFormCancel--button"
+                onClick={closeForm} >
+                    Cancel
+                </button>
             </div>
         </form>
     </section>
