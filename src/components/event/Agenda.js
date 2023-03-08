@@ -1,30 +1,40 @@
+import { useState } from "react"
 
 
-export const Agenda = (events) => {
-    /**
-     * Maps list of events into agenda style html 
-     * @param {list} list of event objects.
-     * @returns {string} html agenda format
-     */
+export const Agenda = ({events = []}) => {
+
+    const [testss, set] =useState(false)
 
     const agenda = (<section className="agenda">
         {
             events.map((e) => {
                 return (
-                    <section className="agenda--event" key={`event--${e.id}`}>
-                        <div>
-                            <div className="agenda--eventName">
-                                Event name: {e.name}
+                    <section className="event--container" key={`event--${e.id}`} id={e.id}>
+                        <div className="details--container">
+                            <div className="event--name">
+                                {e.name}
                             </div>
-                            <div className="agenda--eventDescription">
-                                Description: {e.description}
+                            <div className="event--description">
+                                <label>Description:</label>
+                                <div>
+                                    {e.description}
+                                </div>
                             </div>
-                            <div className="agenda--eventStart">
-                                Start time: {e.startDateTime}
+                            <div className="event--location">
+                                <label>Location:</label>
+                                <div>
+                                    {e.location}
+                                </div>
+                            </div>
+                            <div className="event--start">
+                                <label>When:</label>
+                                <div>
+                                    {e.startDateTime} - {e.endDateTime}
+                                </div>
                             </div>
                         </div>
-                        <div className="eventButton--container">
-                            <button className="event--edit">✏</button>
+                        <div className="button--container">
+                            <button className="event--edit" onClick={() => console.log("test")}>✏</button>
                             <button className="event--comment">💬</button>
                             <button className="event--delete">✖</button>
                         </div>

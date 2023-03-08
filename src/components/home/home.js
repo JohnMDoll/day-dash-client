@@ -8,18 +8,19 @@ import "./home.css"
 export const Home = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
     const [events, setEvents] = useState([])
-    const [userAgenda, setUserAgenda] = useState([])
+    // const [userAgenda, setUserAgenda] = useState([])
     const [changeEvent, setChangeEvent] = useState(false)
+    const [eventToChange, setEventToChange] = useState({})
 
     useEffect(() => {
         getUserEvents()
             .then(res => setEvents(res))
     }, [])
 
-    useEffect(() => {
-        const newAgenda = Agenda(events)
-        setUserAgenda(newAgenda)
-    }, [events])
+    // useEffect(() => {
+    //     const newAgenda = Agenda(events)
+    //     setUserAgenda(newAgenda)
+    // }, [events])
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
@@ -28,7 +29,6 @@ export const Home = () => {
         <article className="home--container">
             <section className="home weather--container">
                 <h3 className="weather--header">Your Weather</h3>
-                {/* <EventForm /> */}
                 {/* {weatherThingy(user)} */}
             </section>
             <section className="home schedule--container">
@@ -37,7 +37,8 @@ export const Home = () => {
                     <EventForm close={setChangeEvent} />
                     :
                     <>
-                        {userAgenda}
+                        {/* {userAgenda} */}
+                        <Agenda events={events} />
                         <button className="new--event"
                             onClick={(e) => setChangeEvent(!changeEvent)}>
                             Add Event

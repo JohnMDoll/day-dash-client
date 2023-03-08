@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const EventForm = ({ close, event = "" }) => {
+export const EventForm = ({ close, event = {} }) => {
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -11,7 +11,7 @@ export const EventForm = ({ close, event = "" }) => {
     })
 
     useEffect(() => {
-        if (event !== "") {
+        if (event !== {}) {
             setFormEvent(event)
         }
     }, [event]
@@ -19,6 +19,7 @@ export const EventForm = ({ close, event = "" }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault()
+        // form submit goes here. Needs a POST and PUT depending on new or edit case
         await (console.log("placeholder"))
     }
 
