@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react"
 import { deleteFriend, getFriends } from "../managers/FriendManager"
+import { FriendForm } from "./FriendForm"
 
 
 export const Friends = () => {
     const [friendships, setFriendships] = useState([])
+    const [needForm, setNeedForm] = useState(false)
 
     useEffect(() => {
+        if (!needForm)
         getFriends()
             .then(res => setFriendships(res))
-    }, []
+    }, [needForm]
     )
 
     return <>
         <section className="tools--container">
-            <button type="button">Add Friend</button>
-            <input type="search" placeholder="Search"></input>
+            {needForm ?
+                <FriendForm setNeedForm={setNeedForm} />
+                :
+                <>
+                    <button type="button" onClick={() => setNeedForm(true)}>Add Friend</button>
+                    <input type="search" placeholder="Search"></input>
+                </>}
         </section>
         <section className="friends">
             {friendships.map((f) => {

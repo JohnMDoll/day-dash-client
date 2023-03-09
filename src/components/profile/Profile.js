@@ -1,12 +1,12 @@
 import { Tags } from "../tags/Tags"
-import { Friends } from "./Friends"
+import { Friends } from "../friends/Friends"
 import "./profile.css"
 
 export const Profile = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
 
     return <>
-        <h1>{user.firstName}'s Dash Management Page, bitches</h1>
+        <h1>{user.firstName}'s Dash Management</h1>
         <article className="profile--container">
             <section className="friends--container">
                 <h3 className="friends--header">Your Friends</h3>

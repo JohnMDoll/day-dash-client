@@ -23,6 +23,29 @@ section.friends div button {
     margin: 5px;
 }
 
+form.friend {
+    border: 2px solid black;
+}
+
+.friend fieldset {
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+
+.friend .button--container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.friend.form--field {
+    margin-block: 3px;
+}
+
 section.tags {
     margin-top: 3px;
     border: 2px solid black;
