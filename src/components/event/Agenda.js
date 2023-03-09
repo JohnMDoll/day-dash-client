@@ -1,5 +1,6 @@
+import { deleteEvent, getUserEvents } from "../managers/EventManager"
 
-export const Agenda = ({eventToChange, setEditingEvent, events = []}) => {
+export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents }) => {
 
     const agenda = (<section className="agenda">
         {
@@ -32,7 +33,14 @@ export const Agenda = ({eventToChange, setEditingEvent, events = []}) => {
                         <div className="button--container">
                             <button className="event--edit" onClick={() => [eventToChange(e), setEditingEvent(true)]}>✏</button>
                             <button className="event--comment">💬</button>
-                            <button className="event--delete">✖</button>
+                            <button className="event--delete" onClick={() => {
+                                deleteEvent(e)
+                                    .then(() => {
+                                        getUserEvents()
+                                            .then(res => setEvents(res))
+                                    })
+
+                            }}>❌</button>
                         </div>
                     </section>
                 )

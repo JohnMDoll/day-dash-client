@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { getUserEvents, postNewEvent, updateEvent } from "../managers/EventManager"
 
 export const EventForm = ({ close, setEventToChange, event = {} }) => {
     const [formEvent, setFormEvent] = useState({
@@ -19,12 +20,18 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        // form submit goes here. Needs a POST and PUT depending on new or edit case
-        await (console.log("placeholder"))
+        if (event.hasOwnProperty("id")) {
+            updateEvent(formEvent)
+        }
+        else {
+            postNewEvent(formEvent)
+        }
+        setEventToChange({})
+        close(false)
     }
 
     const closeForm = () => {
-        setEventToChange({}) //on cancel, clear event being edited from memory to avoid populating form in Add New case
+        setEventToChange({}) //on cancel, reset state to prep form in Add New case
         close(false)
     }
 
@@ -73,7 +80,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     id="startInput"
                     required
                     value={event.startDateTime}
-                    onChange={(e) => setFormEvent({ ...formEvent, start: e.target.value })} />
+                    onChange={(e) => setFormEvent({ ...formEvent, startDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
                 <label htmlFor="endingInput" className="event end">
@@ -83,18 +90,18 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="endingInput"
                     value={event.endDateTime}
-                    onChange={(e) => setFormEvent({ ...formEvent, firstName: e.target.value })} />
+                    onChange={(e) => setFormEvent({ ...formEvent, endDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
                 <label htmlFor="tagsInput" className="event tags">
                     Tags:
                 </label>
-                    {/* {tags mapper} */}
+                {/* {tags mapper} */}
             </fieldset>
             <div className="event button--container">
                 <button type="submit" className="eventFormSubmit--button">Submit</button>
                 <button type="button" className="eventFormCancel--button"
-                onClick={closeForm} >
+                    onClick={closeForm} >
                     Cancel
                 </button>
             </div>

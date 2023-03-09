@@ -17,10 +17,10 @@ export const Home = () => {
             .then(res => setEvents(res))
     }, [])
 
-    // useEffect(() => {
-    //     const newAgenda = Agenda(events)
-    //     setUserAgenda(newAgenda)
-    // }, [events])
+    useEffect(() => {
+        getUserEvents()
+            .then(res => setEvents(res))
+    }, [editingEvent])
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
@@ -37,7 +37,7 @@ export const Home = () => {
                     :
                     <>
                         {/* {userAgenda} */}
-                        <Agenda events={events} eventToChange={setEventToChange} setEditingEvent={setEditingEvent}/>
+                        <Agenda events={events} setEvents={setEvents} eventToChange={setEventToChange} setEditingEvent={setEditingEvent}/>
                         <button className="new--event"
                             onClick={(e) => setEditingEvent(!editingEvent)}>
                             Add Event
