@@ -8,7 +8,9 @@ import "./home.css"
 export const Home = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
     const [events, setEvents] = useState([])
-    const [userAgenda, setUserAgenda] = useState([])
+    // const [userAgenda, setUserAgenda] = useState([])
+    const [editingEvent, setEditingEvent] = useState(false)
+    const [eventToChange, setEventToChange] = useState({})
 
     useEffect(() => {
         getUserEvents()
@@ -16,21 +18,32 @@ export const Home = () => {
     }, [])
 
     useEffect(() => {
-        const newAgenda = Agenda(events)
-        setUserAgenda(newAgenda)
-    }, [events])
+        getUserEvents()
+            .then(res => setEvents(res))
+    }, [editingEvent])
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
-        <h1>Welcome {user.firstName || ""}</h1>
+        <h1>Welcome {user.firstName || "friend"}</h1>
         <article className="home--container">
-            <h3 className="weather--header">Your Weather</h3>
-            <EventForm />
-            {/* {weatherThingy(user)} */}
+            <section className="home weather--container">
+                <h3 className="weather--header">Your Weather</h3>
+                {/* {weatherThingy(user)} */}
+            </section>
             <section className="home schedule--container">
                 <h3 className="schedule--header">Your Events</h3>
-                {userAgenda}
-                <button className="new--event">New Event</button>
+                {editingEvent ?
+                    <EventForm close={setEditingEvent} event={eventToChange} setEventToChange={setEventToChange}/>
+                    :
+                    <>
+                        {/* {userAgenda} */}
+                        <Agenda events={events} setEvents={setEvents} eventToChange={setEventToChange} setEditingEvent={setEditingEvent}/>
+                        <button className="new--event"
+                            onClick={(e) => setEditingEvent(!editingEvent)}>
+                            Add Event
+                        </button>
+                    </>
+                }
             </section>
             <section className="home friend--list--container">
                 <h3 className="friendList--header">Friends with Schedules</h3>

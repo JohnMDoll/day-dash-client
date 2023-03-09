@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { getUserEvents, postNewEvent, updateEvent } from "../managers/EventManager"
 
-export const EventForm = ({ event = "" }) => {
+export const EventForm = ({ close, setEventToChange, event = {} }) => {
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -11,16 +12,27 @@ export const EventForm = ({ event = "" }) => {
     })
 
     useEffect(() => {
-        if (event !== "") {
+        if (event !== {}) {
             setFormEvent(event)
         }
-    }, []
+    }, [event]
     )
 
     const submitHandler = async (e) => {
         e.preventDefault()
-        // await (register? registerUser(newUser) : loginUser(user))
-        // if (localStorage.getItem("dd_user")) {navigate("/home")}
+        if (event.hasOwnProperty("id")) {
+            updateEvent(formEvent)
+        }
+        else {
+            postNewEvent(formEvent)
+        }
+        setEventToChange({})
+        close(false)
+    }
+
+    const closeForm = () => {
+        setEventToChange({}) //on cancel, reset state to prep form in Add New case
+        close(false)
     }
 
     return <section className="event form--container">
@@ -30,10 +42,11 @@ export const EventForm = ({ event = "" }) => {
                     Title:
                 </label>
                 <input type="text"
+                    className="event form--field"
                     id="nameInput"
                     required autoFocus
-                    className="event form--field"
                     placeholder="Event Title"
+                    value={event.name}
                     onChange={(e) => setFormEvent({ ...formEvent, name: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -41,9 +54,10 @@ export const EventForm = ({ event = "" }) => {
                     Description:
                 </label>
                 <input type="description"
-                    id="descriptionInput"
                     className="event form--field"
+                    id="descriptionInput"
                     placeholder="Event Description"
+                    value={event.description}
                     onChange={(e) => setFormEvent({ ...formEvent, description: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -51,9 +65,10 @@ export const EventForm = ({ event = "" }) => {
                     Location:
                 </label>
                 <input type="address"
-                    id="locationInput"
                     className="event form--field"
-                    placeholder="location@domain.com"
+                    id="locationInput"
+                    placeholder="1234 Steve's Place Blvd."
+                    value={event.location}
                     onChange={(e) => setFormEvent({ ...formEvent, location: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -61,29 +76,34 @@ export const EventForm = ({ event = "" }) => {
                     Starting:
                 </label>
                 <input type="datetime-local"
+                    className="event form--field"
                     id="startInput"
                     required
-                    className="event form--field"
-                    onChange={(e) => setFormEvent({ ...formEvent, start: e.target.value })} />
+                    value={event.startDateTime}
+                    onChange={(e) => setFormEvent({ ...formEvent, startDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
                 <label htmlFor="endingInput" className="event end">
                     Ending:
                 </label>
                 <input type="datetime-local"
-                    id="endingInput"
                     className="event form--field"
-                    onChange={(e) => setFormEvent({ ...formEvent, firstName: e.target.value })} />
+                    id="endingInput"
+                    value={event.endDateTime}
+                    onChange={(e) => setFormEvent({ ...formEvent, endDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
                 <label htmlFor="tagsInput" className="event tags">
                     Tags:
                 </label>
-                    {/* {tags mapper} */}
+                {/* {tags mapper} */}
             </fieldset>
             <div className="event button--container">
                 <button type="submit" className="eventFormSubmit--button">Submit</button>
-                <button type="cancel" className="eventFormCancel--button">Cancel</button>
+                <button type="button" className="eventFormCancel--button"
+                    onClick={closeForm} >
+                    Cancel
+                </button>
             </div>
         </form>
     </section>
