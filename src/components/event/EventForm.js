@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getUserEvents, postNewEvent, updateEvent } from "../managers/EventManager"
+import { postNewEvent, updateEvent } from "../managers/EventManager"
 
 export const EventForm = ({ close, setEventToChange, event = {} }) => {
     const [formEvent, setFormEvent] = useState({

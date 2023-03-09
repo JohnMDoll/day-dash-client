@@ -2,7 +2,7 @@ import { deleteEvent, getUserEvents } from "../managers/EventManager"
 
 export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents }) => {
 
-    const agenda = (<section className="agenda">
+    return (<section className="agenda">
         {
             events.map((e) => {
                 return (
@@ -47,5 +47,4 @@ export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents 
             })
         }
     </section>)
-    return agenda
 }
