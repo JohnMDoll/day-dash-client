@@ -13,19 +13,19 @@ export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents 
                             </div>
                             <div className="event--description">
                                 <label>Description:</label>
-                                <div>
+                                <div className="detail">
                                     {e.description}
                                 </div>
                             </div>
                             <div className="event--location">
                                 <label>Location:</label>
-                                <div>
+                                <div className="detail">
                                     {e.location}
                                 </div>
                             </div>
                             <div className="event--start">
                                 <label>When:</label>
-                                <div>
+                                <div className="detail">
                                     {e.startDateTime} - {e.endDateTime}
                                 </div>
                             </div>

@@ -13,7 +13,6 @@ section.agenda {
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
-    justify-content:space-around;
 }
 
 .agenda .details--container {
@@ -24,6 +23,10 @@ section.agenda {
 
 .agenda label {
     font-weight: 500;
+}
+
+.agenda div.detail {
+    margin-left: 15px;
 }
 
 .agenda .event--name {
