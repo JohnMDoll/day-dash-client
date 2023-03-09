@@ -2,12 +2,12 @@ import { useEffect, useState } from "react"
 import { deleteFriend, getFriends } from "../managers/FriendManager"
 
 
-export const Friends = ({ user }) => {
-    const [friends, setFriends] = useState([])
+export const Friends = () => {
+    const [friendships, setFriendships] = useState([])
 
     useEffect(() => {
         getFriends()
-            .then(res => setFriends(res))
+            .then(res => setFriendships(res))
     }, []
     )
 
@@ -16,25 +16,26 @@ export const Friends = ({ user }) => {
             <button type="button">Add Friend</button>
             <input type="search" placeholder="Search"></input>
         </section>
-        <section className="friends--container">
-            {friends.map((f) => {
-                <section className="friend--box" key={`friend--${f.id}`}>
-                    <div className="friend--name">
-                        {f.fullName}
-                    </div>
-                    <div className="button--container">
-                        <button className="friend--delete"
-                            onClick={() => {
-                                deleteFriend(f)
-                                    .then(() => {
-                                        getFriends()
-                                            .then(res => setFriends(res))
-                                    })
-                            }}>❌</button>
-                    </div>
-                </section>
+        <section className="friends">
+            {friendships.map((f) => {
+                return (
+                    <section className="friend--box" key={`friend--${f.id}`}>
+                        <div className="friend--name">
+                            {f.friend.name}
+                        </div>
+                        <div className="button--container">
+                            <button className="friend--delete"
+                                onClick={() => {
+                                    deleteFriend(f.friend)
+                                        .then(() => {
+                                            getFriends()
+                                                .then(res => setFriendships(res))
+                                        })
+                                }}>❌</button>
+                        </div>
+                    </section>
+                )
             })}
-
         </section>
     </>
 }

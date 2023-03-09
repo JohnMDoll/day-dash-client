@@ -9,7 +9,7 @@ export const Profile = () => {
         <article className="profile--container">
             <section className="friends--container">
                 <h3 className="friends--header">Your Friends</h3>
-                <Friends user={user}/>
+                <Friends />
             </section>
             <section className="tags--container">
                 <h3 className="tags--header">Your Tags</h3>

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 section.agenda {
     border: 2px solid black;
 }
@@ -44,8 +45,4 @@ section.agenda div button {
     border-radius: 3vh;
     background-color: white;
     margin: 5px;
-}
-
-body {
-    background-color: rgb(110, 3, 24);
 }

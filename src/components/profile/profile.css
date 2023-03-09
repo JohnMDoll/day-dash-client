@@ -4,5 +4,21 @@ article.profile--container {
 }
 
 section.friends {
+    margin-top: 3px;
     border: 2px solid black;
+}
+
+.friend--box {
+    display:  flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+
+section.friends div button {
+    border-radius: 3vh;
+    background-color: white;
+    margin: 5px;
 }
