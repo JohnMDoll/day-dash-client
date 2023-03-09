@@ -65,3 +65,51 @@ section.tags div button {
     background-color: white;
     margin: 5px;
 }
+
+.tools--container form.tag {
+    border: 2px solid black;
+}
+
+.tools--container .tag fieldset {
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+
+.tag .button--container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags .form--container, .tag.form--container {
+    background-color: aqua;
+}
+
+.tag.form--field {
+    margin-block: 3px;
+}
+
+.tag--box .tag fieldset {
+    display:  flex;
+    justify-content: space-between;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tag--box .tag input {
+    display: flex;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset.tag, .tag.form--field {
+    padding: 0;
+}

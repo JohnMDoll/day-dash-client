@@ -46,7 +46,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     id="nameInput"
                     required autoFocus
                     placeholder="Event Title"
-                    value={event.name}
+                    defaultValue={event.name}
                     onChange={(e) => setFormEvent({ ...formEvent, name: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -57,7 +57,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="descriptionInput"
                     placeholder="Event Description"
-                    value={event.description}
+                    defaultValue={event.description}
                     onChange={(e) => setFormEvent({ ...formEvent, description: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -68,7 +68,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="locationInput"
                     placeholder="1234 Steve's Place Blvd."
-                    value={event.location}
+                    defaultValue={event.location}
                     onChange={(e) => setFormEvent({ ...formEvent, location: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -79,7 +79,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="startInput"
                     required
-                    value={event.startDateTime}
+                    defaultValue={event.startDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, startDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -89,7 +89,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                 <input type="datetime-local"
                     className="event form--field"
                     id="endingInput"
-                    value={event.endDateTime}
+                    defaultValue={event.endDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, endDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">

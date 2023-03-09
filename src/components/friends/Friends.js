@@ -8,9 +8,10 @@ export const Friends = () => {
     const [needForm, setNeedForm] = useState(false)
 
     useEffect(() => {
-        if (!needForm)
-        getFriends()
-            .then(res => setFriendships(res))
+        if (!needForm) {
+            getFriends()
+                .then(res => setFriendships(res))
+        }
     }, [needForm]
     )
 
@@ -32,7 +33,7 @@ export const Friends = () => {
                             {f.friend.name}
                         </div>
                         <div className="button--container">
-                            <button className="friend--delete"
+                            <button className="friend--delete" title="Unfriend"
                                 onClick={() => {
                                     deleteFriend(f.friend)
                                         .then(() => {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { postFriend } from "../managers/FriendManager"
 
 export const FriendForm = ({ setNeedForm }) => {
