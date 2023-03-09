@@ -3,6 +3,7 @@ import './App.css';
 import { Login } from './components/login/Login';
 import { Authorized } from './components/views/Authorized';
 import { ApplicationViews } from './components/views/ApplicationViews';
+import { Navbar } from './components/nav/Navbar';
 
 
 export const DayDash = () => {
@@ -11,6 +12,7 @@ export const DayDash = () => {
 
 		<Route path="*" element={
 			<Authorized>
+				<Navbar />
 				<ApplicationViews />
 			</Authorized>
 		} />
