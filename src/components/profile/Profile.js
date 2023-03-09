@@ -1,3 +1,4 @@
+import { Tags } from "../tags/Tags"
 import { Friends } from "./Friends"
 import "./profile.css"
 
@@ -13,7 +14,7 @@ export const Profile = () => {
             </section>
             <section className="tags--container">
                 <h3 className="tags--header">Your Tags</h3>
-                {/* {tagThingy(user?)} */}
+                <Tags />
             </section>
         </article>
     </>
