@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import { postNewEvent, updateEvent } from "../managers/EventManager"
+import { TagMap } from "../tags/TagMap"
 
 export const EventForm = ({ close, setEventToChange, event = {} }) => {
+    const [eventTags, setEventTags] = useState([])
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -18,8 +20,9 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
     }, [event]
     )
 
-    const submitHandler = async (e) => {
+    const submitHandler =  (e) => {
         e.preventDefault()
+        
         if (event.hasOwnProperty("id")) {
             updateEvent(formEvent)
         }
@@ -96,10 +99,10 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                 <label htmlFor="tagsInput" className="event tags">
                     Tags:
                 </label>
-                {/* {tags mapper} */}
+                <TagMap existingTags={formEvent.tags} resultTags={setEventTags}/>
             </fieldset>
             <div className="event button--container">
-                <button type="submit" className="eventFormSubmit--button">Submit</button>
+                <button type="submit" onClick={()=>setFormEvent({ ...formEvent, tags: eventTags })} className="eventFormSubmit--button">Submit</button>
                 <button type="button" className="eventFormCancel--button"
                     onClick={closeForm} >
                     Cancel

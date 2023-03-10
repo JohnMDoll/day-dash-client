@@ -85,10 +85,6 @@ section.tags div button {
     justify-content: space-between;
 }
 
-.tags .form--container, .tag.form--container {
-    background-color: aqua;
-}
-
 .tag.form--field {
     margin-block: 3px;
 }

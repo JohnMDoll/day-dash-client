@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Agenda } from "../event/Agenda"
 import { EventForm } from "../event/EventForm"
 import { getUserEvents } from "../managers/EventManager"
+import { TagMap } from '../tags/TagMap'
 import "./home.css"
 
 
