@@ -10,6 +10,10 @@ export const getFrienders = () => {
     return fetchIt(`${API}/friends?frienders`)
 }
 
+export const getFriender = (frienderId) => {
+    return fetchIt(`${API}/friends/${frienderId}`)
+}
+
 export const postFriend = (friend) => {
     return fetchIt(`${API}/friends`, {
         method: 'POST',

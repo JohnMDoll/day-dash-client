@@ -1,0 +1,81 @@
+.home--container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section.agenda {
+    border: 2px solid black;
+}
+
+.agenda .event--container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+
+.agenda .details--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.agenda label {
+    font-weight: 500;
+}
+
+.agenda div.detail {
+    margin-left: 15px;
+}
+
+.agenda .event--name {
+    font-weight: bold;
+}
+
+.agenda .button--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+section.agenda div button {
+    border-radius: 3vh;
+    background-color: white;
+    margin: 5px;
+}
+
+form.event {
+    border: 2px solid black;
+}
+
+.event fieldset {
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+.event section.tagmap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home .friends {
+    display:flex;
+    flex-direction: column;
+}
+
+.home .friend--box {
+    display:flex;
+    
+    flex-direction: column;
+}
+
+.home .friend--box div:nth-child(2n+2) {
+    border-top: 1px dashed black;
+}

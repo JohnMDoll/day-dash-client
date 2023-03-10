@@ -1,7 +1,7 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
 import { timeFormatter } from "../utils/timeFormatter"
 
-export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents }) => {
+export const Agenda = ({ eventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined }) => {
 
     return (<section className="agenda">
         {
