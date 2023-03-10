@@ -1,4 +1,5 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
+import { timeFormatter } from "../utils/timeFormatter"
 
 export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents }) => {
 
@@ -26,7 +27,7 @@ export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents 
                             <div className="event--start">
                                 <label>When:</label>
                                 <div className="detail">
-                                    {e.startDateTime} - {e.endDateTime}
+                                {timeFormatter(e.startDateTime)}-{timeFormatter(e.endDateTime)}
                                 </div>
                             </div>
                         </div>

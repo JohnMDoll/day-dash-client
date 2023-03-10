@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Agenda } from "../event/Agenda"
 import { EventForm } from "../event/EventForm"
+import { Frienders } from '../friends/Frienders'
 import { getUserEvents } from "../managers/EventManager"
 import { TagMap } from '../tags/TagMap'
 import "./home.css"
@@ -48,12 +49,7 @@ export const Home = () => {
             </section>
             <section className="home friend--list--container">
                 <h3 className="friendList--header">Friends with Schedules</h3>
-                {/* {friendList(user)} */}
-                <ul className="friend--list">
-                    <li>Friend A</li>
-                    <li>Friend 1</li>
-                    <li>Friend X</li>
-                </ul>
+                <Frienders />
             </section>
         </article>
     </>
