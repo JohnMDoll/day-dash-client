@@ -3,14 +3,12 @@ import { Agenda } from "../event/Agenda"
 import { EventForm } from "../event/EventForm"
 import { Frienders } from '../friends/Frienders'
 import { getUserEvents } from "../managers/EventManager"
-import { TagMap } from '../tags/TagMap'
 import "./home.css"
 
 
 export const Home = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
     const [events, setEvents] = useState([])
-    // const [userAgenda, setUserAgenda] = useState([])
     const [editingEvent, setEditingEvent] = useState(false)
     const [eventToChange, setEventToChange] = useState({})
 
@@ -30,7 +28,6 @@ export const Home = () => {
         <article className="home--container">
             {/* <section className="home weather--container">
                 <h3 className="weather--header">Your Weather</h3>
-                
             </section> */}
             <section className="home schedule--container">
                 <h3 className="schedule--header">Your Events</h3>
@@ -38,7 +35,6 @@ export const Home = () => {
                     <EventForm close={setEditingEvent} event={eventToChange} setEventToChange={setEventToChange}/>
                     :
                     <>
-                        {/* {userAgenda} */}
                         <Agenda events={events} setEvents={setEvents} eventToChange={setEventToChange} setEditingEvent={setEditingEvent}/>
                         <button className="new--event"
                             onClick={(e) => setEditingEvent(!editingEvent)}>

@@ -72,10 +72,5 @@ form.event {
 
 .home .friend--box {
     display:flex;
-    
     flex-direction: column;
-}
-
-.home .friend--box div:nth-child(2n+2) {
-    border-top: 1px dashed black;
 }

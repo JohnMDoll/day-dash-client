@@ -21,14 +21,6 @@ export const postFriend = (friend) => {
     })
 }
 
-// TODO not yet utilized. Maybe obsoleted in tag manager when it's written
-// export const updateFriend = (friend) => {
-//     return fetchIt(`${API}/friends/${friend.id}`, {
-//         method: 'PUT',
-//         body: JSON.stringify(friend)
-//     })
-// }
-
 export const deleteFriend = (friend) => {
     return fetchIt(`${API}/friends/${friend.id}`, {
         method: 'DELETE'

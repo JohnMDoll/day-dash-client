@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { updateTag } from "../managers/TagManager"
 import { deleteTag, getTags } from "../managers/TagManager"
 import { TagForm } from "./TagForm"
 
@@ -42,7 +41,7 @@ export const Tags = () => {
             {tags.map((t) => {
                 return (
                     <section className="tag--box" key={`tag--${t.id}`}>
-                        {needUpdateForm && updatingTag.id == t.id ?
+                        {needUpdateForm && updatingTag.id === t.id ?
                             <TagForm setNeedForm={setNeedUpdateForm} tag={t} />
                             :
                             <>

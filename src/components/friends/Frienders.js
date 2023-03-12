@@ -24,14 +24,14 @@ export const Frienders = () => {
                         </div>
                         {f.events.map(e => {
                             return (
-                                <>
-                                    <div className="friend--name" key={`friend--event--name--${f.id}${e.id}`}>
+                                    <div className="friend--event" key={`friend--event--${f.id}--${e.id}`}>
+                                    <div className="event--name" >
                                         {e.name}
                                     </div>
-                                    <div className="friend--times" key={`friend--times--${f.id}${e.id}`}>
+                                    <div className="friend--times">
                                         {timeFormatter(e.startDateTime)}-{timeFormatter(e.endDateTime)}
                                     </div>
-                                </>
+                                    </div>
                             )
                         })}
                     </section>
