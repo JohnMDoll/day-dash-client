@@ -6,13 +6,33 @@ import { FriendForm } from "./FriendForm"
 export const Friends = () => {
     const [friendships, setFriendships] = useState([])
     const [needForm, setNeedForm] = useState(false)
+    const [searchFriends, setSearchFriends] = useState([])
 
     useEffect(() => {
         if (!needForm) {
             getFriends()
-                .then(res => setFriendships(res))
+                .then(res => {
+                    setFriendships(res)
+                    setSearchFriends(res)
+                })
         }
     }, [needForm]
+    )
+
+    const searchedFriends = (query) => {
+        let searchResult = []
+        friendships.map(f => {
+            if (f.friend.name.toLowerCase().includes(query.toLowerCase())) {
+                searchResult.push(f)
+            }
+            setSearchFriends(searchResult)
+        })
+    }
+
+    useEffect(() => {
+        const query = document.querySelector('#search').value
+        searchedFriends(query)
+    }, [friendships]
     )
 
     return <>
@@ -22,11 +42,11 @@ export const Friends = () => {
                 :
                 <>
                     <button type="button" onClick={() => setNeedForm(true)}>Add Friend</button>
-                    <input type="search" placeholder="Search"></input>
+                    <input type="search" id="search" onChange={(e) => searchedFriends(e.target.value)} placeholder="Search"></input>
                 </>}
         </section>
         <section className="friends">
-            {friendships.map((f) => {
+            {searchFriends.map((f) => {
                 return (
                     <section className="friend--box" key={`friend--${f.id}`}>
                         <div className="friend--name">
