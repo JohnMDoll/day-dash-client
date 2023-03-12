@@ -28,10 +28,10 @@ export const Home = () => {
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <h1>Welcome {user.firstName || "friend"}</h1>
         <article className="home--container">
-            <section className="home weather--container">
+            {/* <section className="home weather--container">
                 <h3 className="weather--header">Your Weather</h3>
-                {/* {weatherThingy(user)} */}
-            </section>
+                
+            </section> */}
             <section className="home schedule--container">
                 <h3 className="schedule--header">Your Events</h3>
                 {editingEvent ?

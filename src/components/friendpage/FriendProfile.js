@@ -27,15 +27,14 @@ export const FriendProfile = () => {
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <h1>{`${friend.name}'s Details` || "friend"}</h1>
         <article className="home--container">
-            <section className="home weather--container">
+            {/* <section className="home weather--container">
                 <h3 className="weather--header">Weather</h3>
-                {/* {weatherThingy(user)} */}
-            </section>
+
+            </section> */}
             <section className="home schedule--container">
                 <h3 className="schedule--header">Events</h3>
                     <>
                         <Agenda events={events} />
-
                     </>
             </section>
         </article>
