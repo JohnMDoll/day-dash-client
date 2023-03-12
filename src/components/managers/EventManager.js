@@ -7,7 +7,7 @@ export const getUserEvents = () => {
 }
 
 export const getFrienderEvents = (frienderId) => {
-    return fetchIt(`${API}/events?friender${frienderId}`)
+    return fetchIt(`${API}/events?friender=${frienderId}`)
 }
 
 export const postNewEvent = (event) => {

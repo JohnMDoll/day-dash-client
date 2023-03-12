@@ -21,7 +21,7 @@ export const Friends = () => {
 
     const searchedFriends = (query) => {
         let searchResult = []
-        friendships.map(f => {
+        friendships.map(f => { 
             if (f.friend.name.toLowerCase().includes(query.toLowerCase())) {
                 searchResult.push(f)
             }
