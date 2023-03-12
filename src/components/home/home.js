@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Agenda } from "../event/Agenda"
 import { EventForm } from "../event/EventForm"
+import { Frienders } from '../friends/Frienders'
 import { getUserEvents } from "../managers/EventManager"
+import { TagMap } from '../tags/TagMap'
 import "./home.css"
 
 
@@ -26,10 +28,10 @@ export const Home = () => {
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <h1>Welcome {user.firstName || "friend"}</h1>
         <article className="home--container">
-            <section className="home weather--container">
+            {/* <section className="home weather--container">
                 <h3 className="weather--header">Your Weather</h3>
-                {/* {weatherThingy(user)} */}
-            </section>
+                
+            </section> */}
             <section className="home schedule--container">
                 <h3 className="schedule--header">Your Events</h3>
                 {editingEvent ?
@@ -47,12 +49,7 @@ export const Home = () => {
             </section>
             <section className="home friend--list--container">
                 <h3 className="friendList--header">Friends with Schedules</h3>
-                {/* {friendList(user)} */}
-                <ul className="friend--list">
-                    <li>Friend A</li>
-                    <li>Friend 1</li>
-                    <li>Friend X</li>
-                </ul>
+                <Frienders />
             </section>
         </article>
     </>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
-import { getUserEvents, postNewEvent, updateEvent } from "../managers/EventManager"
+import { postNewEvent, updateEvent } from "../managers/EventManager"
+import { TagMap } from "../tags/TagMap"
 
 export const EventForm = ({ close, setEventToChange, event = {} }) => {
+    const [eventTags, setEventTags] = useState([])
     const [formEvent, setFormEvent] = useState({
         name: "",
         description: "",
@@ -18,8 +20,9 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
     }, [event]
     )
 
-    const submitHandler = async (e) => {
+    const submitHandler =  (e) => {
         e.preventDefault()
+        
         if (event.hasOwnProperty("id")) {
             updateEvent(formEvent)
         }
@@ -46,7 +49,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     id="nameInput"
                     required autoFocus
                     placeholder="Event Title"
-                    value={event.name}
+                    defaultValue={event.name}
                     onChange={(e) => setFormEvent({ ...formEvent, name: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -57,7 +60,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="descriptionInput"
                     placeholder="Event Description"
-                    value={event.description}
+                    defaultValue={event.description}
                     onChange={(e) => setFormEvent({ ...formEvent, description: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -68,7 +71,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="locationInput"
                     placeholder="1234 Steve's Place Blvd."
-                    value={event.location}
+                    defaultValue={event.location}
                     onChange={(e) => setFormEvent({ ...formEvent, location: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -79,7 +82,7 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                     className="event form--field"
                     id="startInput"
                     required
-                    value={event.startDateTime}
+                    defaultValue={event.startDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, startDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
@@ -89,17 +92,17 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                 <input type="datetime-local"
                     className="event form--field"
                     id="endingInput"
-                    value={event.endDateTime}
+                    defaultValue={event.endDateTime}
                     onChange={(e) => setFormEvent({ ...formEvent, endDateTime: e.target.value })} />
             </fieldset>
             <fieldset className="event">
                 <label htmlFor="tagsInput" className="event tags">
                     Tags:
                 </label>
-                {/* {tags mapper} */}
+                <TagMap existingTags={formEvent.tags} resultTags={setEventTags}/>
             </fieldset>
             <div className="event button--container">
-                <button type="submit" className="eventFormSubmit--button">Submit</button>
+                <button type="submit" onClick={()=>setFormEvent({ ...formEvent, tags: eventTags })} className="eventFormSubmit--button">Submit</button>
                 <button type="button" className="eventFormCancel--button"
                     onClick={closeForm} >
                     Cancel

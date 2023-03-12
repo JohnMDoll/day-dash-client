@@ -1,8 +1,9 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
+import { timeFormatter } from "../utils/timeFormatter"
 
-export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents }) => {
+export const Agenda = ({ eventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined }) => {
 
-    const agenda = (<section className="agenda">
+    return (<section className="agenda">
         {
             events.map((e) => {
                 return (
@@ -26,7 +27,7 @@ export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents 
                             <div className="event--start">
                                 <label>When:</label>
                                 <div className="detail">
-                                    {e.startDateTime} - {e.endDateTime}
+                                {timeFormatter(e.startDateTime)}-{timeFormatter(e.endDateTime)}
                                 </div>
                             </div>
                         </div>
@@ -47,5 +48,4 @@ export const Agenda = ({ eventToChange, setEditingEvent, events = [], setEvents 
             })
         }
     </section>)
-    return agenda
 }
