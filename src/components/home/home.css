@@ -6,6 +6,8 @@
 
 section.agenda {
     border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
 }
 
 .agenda .event--container {
@@ -68,6 +70,8 @@ form.event {
 .home .friends {
     display:flex;
     flex-direction: column;
+    max-height: 55vh;
+    overflow-y: auto;
 }
 
 .home .friend--box {

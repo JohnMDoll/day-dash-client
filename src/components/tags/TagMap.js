@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getTags } from "../managers/TagManager"
 
 
-export const TagMap = ({ existingTags = [], resultTags = undefined }) => {
+export const TagMap = ({ existingTags, resultTags = undefined }) => {
     /**
      * module to be called whenever tags assignments are required
      * @param existingTags any tags already assigned to an object
@@ -18,10 +18,12 @@ export const TagMap = ({ existingTags = [], resultTags = undefined }) => {
     )
 
     useEffect(() => {
+        if (existingTags) {
         let tagCopy = [...existingTags]
         tagCopy.map(tag => tag.id)
         setActiveTags(tagCopy)
-    }, []
+    }
+    }, [existingTags]
     )
 
     useEffect(() => {
@@ -52,7 +54,7 @@ export const TagMap = ({ existingTags = [], resultTags = undefined }) => {
                 return <div className="mapped--tag" id={t.id} key={`tag-${t.id}`}>
                     <input
                         type={"checkbox"}
-                        defaultChecked={existingTags.find(exTag => exTag === t.id)}
+                        defaultChecked={existingTags? existingTags.find(exTag => exTag === t.id): false}
                         name={`tag--${t.id}`}
                         value={t.id}
                         onClick={tagCheck} />

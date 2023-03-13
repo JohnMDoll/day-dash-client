@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Agenda } from "../event/Agenda"
 import { getFrienderEvents } from "../managers/EventManager"
 import { getFriender } from '../managers/FriendManager'
-import "./friendpage.css"
+import "../home/home.css"
 
 
 export const FriendProfile = () => {
@@ -21,7 +21,7 @@ export const FriendProfile = () => {
     )
 
     return <>
-        <h1>{`${friend.name}'s Details` || "friend"}</h1>
+        <h1>{`${friend.name}` || "friend"}</h1>
         <article className="home--container">
             {/* <section className="home weather--container">
                 <h3 className="weather--header">Weather</h3>
