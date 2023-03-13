@@ -4,6 +4,12 @@
     justify-content: space-around;
 }
 
+section.weather {
+    border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
 section.agenda {
     border: 2px solid black;
     max-height: 55vh;
