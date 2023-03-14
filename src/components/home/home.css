@@ -123,10 +123,17 @@ form.event {
     flex-direction: column;
 }
 
-.comments--container .comment--container .commenter {
+.commenter--and--button--container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     border-bottom: 1px dashed black;
+}
+
+.commenter--and--button--container button {
+    border-radius: 3vh;
+    background-color: white;
+    margin-inline: 5px;
+    margin-block: 2px;
 }
 
 fieldset.comment {

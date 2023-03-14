@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { postComment, updateComment } from "../managers/CommentManager"
+import { deleteComment, postComment, updateComment } from "../managers/CommentManager"
 
 export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange }) => {
     const [comments, setComments] = useState(eventToChange.comments)
@@ -40,7 +40,7 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
 
     const handleModalClick = (event) => {
         if (event.target === document.querySelector(".comment.form--container")) {
-            needCommentEditor(false)
+            closeForm()
         }
     }
     return <>
@@ -53,8 +53,22 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                                 <div className="comment">
                                     {comment.comment}
                                 </div>
-                                <div className="commenter">
-                                    -{comment.commenter.name}
+                                <div className="commenter--and--button--container">
+                                    <div className="comment--button--container">
+                                        {/* <button className="comment--edit">
+                                            ✏
+                                        </button> */}
+                                        <button className="comment--delete"
+                                            onClick={() => {
+                                                deleteComment(comment)
+                                                closeForm()
+                                            }}>
+                                            ❌
+                                        </button>
+                                    </div>
+                                    <div className="commenter">
+                                        -{comment.commenter.name}
+                                    </div>
                                 </div>
                             </div>
                         )

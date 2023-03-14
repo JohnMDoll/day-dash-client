@@ -22,7 +22,7 @@ export const FriendProfile = () => {
 
         getFrienderEvents(frienderId)
             .then(res => setEvents(res))
-    }, [frienderId]
+    }, [frienderId, editingComment]
     )
 
     return <>

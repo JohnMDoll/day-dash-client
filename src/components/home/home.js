@@ -24,12 +24,7 @@ export const Home = () => {
     useEffect(() => {
         getUserEvents()
             .then(res => setEvents(res))
-    }, [editingEvent])
-
-    // useEffect(() => {
-    //     getUserEvents()
-    //         .then(res => setEvents(res))
-    // }, [editingComment])
+    }, [editingEvent, editingComment])
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
