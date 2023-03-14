@@ -13,7 +13,6 @@ export const FriendProfile = () => {
     const [friend, setFriend] = useState({})
     const [events, setEvents] = useState([])
     const [eventToChange, setEventToChange] = useState({})
-    const [comments, setComments] = useState([])
     const [editingComment, setEditingComment] = useState(false)
     const [commentToChange, setCommentToChange] = useState({})
 
@@ -47,7 +46,6 @@ export const FriendProfile = () => {
                         events={events}
                         friend={friend}
                         setEventToChange={setEventToChange}
-                        comments={comments}
                         commentToChange={commentToChange}
                         setEditingComment={setEditingComment}
                     />

@@ -113,6 +113,20 @@ form.event {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: auto;
+    max-width: 95%;
+    padding-inline: 15px;
+    padding-block: 5px;
+}
+
+.comment.form--container .comments--container {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments--container .comment--container .commenter {
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px dashed black;
 }
 
 fieldset.comment {
@@ -121,7 +135,7 @@ fieldset.comment {
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
-    margin: 3px;
+    margin-block: 3px;
     padding-inline: 5px;
 }
 
@@ -132,7 +146,7 @@ fieldset.comment {
 
 .comment.form--container textarea {
     width: auto;
-    height: 100px;
+    /* height: 100px; */
 }
 /* home page friends list styling below */
 .home .friends {

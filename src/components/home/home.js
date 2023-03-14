@@ -11,7 +11,6 @@ import "./home.css"
 export const Home = () => {
     const user = JSON.parse(localStorage.getItem("dd_user"))
     const [events, setEvents] = useState([])
-    const [comments, setComments] = useState([])
     const [editingEvent, setEditingEvent] = useState(false)
     const [eventToChange, setEventToChange] = useState({})
     const [editingComment, setEditingComment] = useState(false)
@@ -44,6 +43,7 @@ export const Home = () => {
                 <h3 className="schedule--header">Your Events</h3>
                 {editingComment ?
                     <CommentForm
+                        eventToChange={eventToChange}
                         needCommentEditor={setEditingComment}
                         existingComment={commentToChange}
                         setCommentToChange={setCommentToChange}
@@ -62,7 +62,6 @@ export const Home = () => {
                             setEvents={setEvents}
                             setEventToChange={setEventToChange}
                             setEditingEvent={setEditingEvent}
-                            comments={comments}
                             commentToChange={commentToChange}
                             setEditingComment={setEditingComment}
                         />

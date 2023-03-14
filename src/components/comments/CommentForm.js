@@ -1,20 +1,36 @@
 import { useEffect, useState } from "react"
+import { postComment, updateComment } from "../managers/CommentManager"
 
 export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange }) => {
+    const [comments, setComments] = useState(eventToChange.comments)
     const [comment, setComment] = useState({
         comment: "",
-        event: eventToChange,
+        event: eventToChange.id,
     })
 
     useEffect(() => {
         document.querySelector(".comment.form--container")
             .addEventListener('click', handleModalClick)
-    }, [])
+    }, []
+    )
 
-    const submitHandler = async (e) => {
+    useEffect(() => {
+        if (existingComment.hasOwnProperty('id')) {
+            setComment(existingComment)
+        }
+    }, [existingComment]
+    )
+
+    const submitHandler = (e) => {
         e.preventDefault()
-        // await postComment(comment)
-        // needCommentEditor(false)
+
+        if (existingComment.hasOwnProperty("id")) {
+            updateComment(comment)
+        }
+        else {
+            postComment(comment)
+        }
+        closeForm()
     }
 
     const closeForm = () => {
@@ -27,27 +43,43 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
             needCommentEditor(false)
         }
     }
-    return <section className="comment form--container">
-        <form className="comment" onSubmit={submitHandler}>
-            <fieldset className="comment">
-                <label htmlFor="commentInput" className="comment--label">
-                    Write a comment!
-                </label>
-                <textarea type="text"
-                    className="comment form--field"
-                    id="commentInput"
-                    required autoFocus
-                    placeholder="Don't forget the thing!"
-                    value={comment.comment}
-                    onChange={(e) => setComment({ ...comment, comment: e.target.value })} />
-                <div className="comment button--container">
-                    <button type="submit" className="commentFormSubmit--button">Add Comment</button>
-                    <button type="button" className="commentFormCancel--button"
-                        onClick={closeForm} >
-                        Cancel
-                    </button>
-                </div>
-            </fieldset>
-        </form>
-    </section>
+    return <>
+        <section className="comment form--container">
+            <form className="comment" onSubmit={submitHandler}>
+                <section className="comments--container">
+                    {comments.map(comment => {
+                        return (
+                            <div className="comment--container" key={`comment--${comment.id}`}>
+                                <div className="comment">
+                                    {comment.comment}
+                                </div>
+                                <div className="commenter">
+                                    -{comment.commenter.name}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </section>
+                <fieldset className="comment">
+                    <label htmlFor="commentInput" className="comment--label">
+                        Write a comment!
+                    </label>
+                    <textarea type="text"
+                        className="comment form--field"
+                        id="commentInput"
+                        required autoFocus
+                        placeholder="Don't forget the thing!"
+                        value={comment.comment}
+                        onChange={(e) => setComment({ ...comment, comment: e.target.value })} />
+                    <div className="comment button--container">
+                        <button type="submit" className="commentFormSubmit--button">Add Comment</button>
+                        <button type="button" className="commentFormCancel--button"
+                            onClick={closeForm} >
+                            Cancel
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </>
 }

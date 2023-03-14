@@ -1,7 +1,7 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
 import { timeFormatter } from "../utils/timeFormatter"
 
-export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false, comments, setCommentToChange, setEditingComment }) => {
+export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false,  setCommentToChange, setEditingComment }) => {
 
     return (<section className="agenda">
         {
@@ -33,7 +33,7 @@ export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefin
                         </div>
                         <div className="button--container">
                             <button className="event--comment"
-                                onClick={() => [setEventToChange(e), setEditingComment(true)] }>
+                                onClick={() => [setEventToChange({id: e.id, comments: e.comments}), setEditingComment(true)] }>
                                 💬
                             </button>
                             {!friend ?
