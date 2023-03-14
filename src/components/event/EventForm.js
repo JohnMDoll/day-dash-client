@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { postNewEvent, updateEvent } from "../managers/EventManager"
 import { TagMap } from "../tags/TagMap"
 
-export const EventForm = ({ close, setEventToChange, event = {} }) => {
+export const EventForm = ({ needEventEditor, setEventToChange, event = {}}) => {
     const [eventTags, setEventTags] = useState([])
     const [formEvent, setFormEvent] = useState({
         name: "",
@@ -30,12 +30,12 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
             postNewEvent(formEvent)
         }
         setEventToChange({})
-        close(false)
+        needEventEditor(false)
     }
 
     const closeForm = () => {
         setEventToChange({}) //on cancel, reset state to prep form in Add New case
-        close(false)
+        needEventEditor(false)
     }
 
     return <section className="event form--container">
@@ -102,9 +102,12 @@ export const EventForm = ({ close, setEventToChange, event = {} }) => {
                 <TagMap existingTags={formEvent.tags} resultTags={setEventTags}/>
             </fieldset>
             <div className="event button--container">
-                <button type="submit" onClick={()=>setFormEvent({ ...formEvent, tags: eventTags })} className="eventFormSubmit--button">Submit</button>
+                <button type="submit" 
+                onClick={()=>setFormEvent({ ...formEvent, tags: eventTags })} className="eventFormSubmit--button">
+                    Submit
+                    </button>
                 <button type="button" className="eventFormCancel--button"
-                    onClick={closeForm} >
+                    onClick={closeForm}>
                     Cancel
                 </button>
             </div>

@@ -5,12 +5,17 @@ import { getFrienderEvents } from "../managers/EventManager"
 import { getFriender } from '../managers/FriendManager'
 import "../home/home.css"
 import { Weather } from '../weather/Weather'
+import { CommentForm } from '../comments/CommentForm'
 
 
 export const FriendProfile = () => {
     const frienderId = useParams().id
     const [friend, setFriend] = useState({})
     const [events, setEvents] = useState([])
+    const [eventToChange, setEventToChange] = useState({})
+    const [comments, setComments] = useState([])
+    const [editingComment, setEditingComment] = useState(false)
+    const [commentToChange, setCommentToChange] = useState({})
 
     useEffect(() => {
         getFriender(frienderId)
@@ -30,9 +35,22 @@ export const FriendProfile = () => {
             </section>
             <section className="home schedule--container">
                 <h3 className="schedule--header">Events</h3>
-                    <>
-                        <Agenda events={events} friend={friend} />
-                    </>
+                {editingComment ?
+                    <CommentForm
+                        eventToChange={eventToChange}
+                        needCommentEditor={setEditingComment}
+                        existingComment={commentToChange}
+                        setCommentToChange={setCommentToChange}
+                    />
+                    : <></>}
+                    <Agenda
+                        events={events}
+                        friend={friend}
+                        setEventToChange={setEventToChange}
+                        comments={comments}
+                        commentToChange={commentToChange}
+                        setEditingComment={setEditingComment}
+                    />
             </section>
         </article>
     </>

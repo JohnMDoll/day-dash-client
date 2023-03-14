@@ -1,7 +1,7 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
 import { timeFormatter } from "../utils/timeFormatter"
 
-export const Agenda = ({ eventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false }) => {
+export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false, comments, setCommentToChange, setEditingComment }) => {
 
     return (<section className="agenda">
         {
@@ -32,19 +32,28 @@ export const Agenda = ({ eventToChange = undefined, setEditingEvent = undefined,
                             </div>
                         </div>
                         <div className="button--container">
-                            {/* <button className="event--comment">💬</button> */}
+                            <button className="event--comment"
+                                onClick={() => [setEventToChange(e), setEditingComment(true)] }>
+                                💬
+                            </button>
                             {!friend ?
                                 <>
-                                    <button className="event--edit" onClick={() => [eventToChange(e), setEditingEvent(true)]}>✏</button>
-                                    <button className="event--delete" onClick={() => {
+                                    <button className="event--edit" 
+                                    onClick={() => [setEventToChange(e), setEditingEvent(true)]}>
+                                        ✏
+                                    </button>
+                                    <button className="event--delete" 
+                                    onClick={() => {
                                         deleteEvent(e)
                                             .then(() => {
                                                 getUserEvents()
                                                     .then(res => setEvents(res))
                                             })
-                                    }}>❌</button>
-                                </> 
-                                : 
+                                    }}>
+                                        ❌
+                                    </button>
+                                </>
+                                :
                                 <></>
                             }
                         </div>

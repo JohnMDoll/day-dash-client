@@ -9,6 +9,16 @@ section.weather {
     max-height: 55vh;
     overflow-y: auto;
 }
+/* home/friend page agenda styling below > event form > comments > friends */
+section.home.schedule--container {
+    min-width: 215px;
+}
+
+@media screen and (min-width: 600px) {
+    section.home.schedule--container {
+        max-width: 30%;
+    }
+}
 
 section.agenda {
     border: 2px solid black;
@@ -29,6 +39,7 @@ section.agenda {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    max-width: 80%;
 }
 
 .agenda label {
@@ -36,7 +47,14 @@ section.agenda {
 }
 
 .agenda div.detail {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 15px;
+}
+
+.agenda .event--location div.detail {
+    word-break: break-all; 
+    /* wraps solid strings, i.e. zoom links */
 }
 
 .agenda .event--name {
@@ -46,21 +64,59 @@ section.agenda {
 .agenda .button--container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 section.agenda div button {
     border-radius: 3vh;
     background-color: white;
-    margin: 5px;
+    margin-inline: 5px;
+    margin-block: 15%;
 }
-
+/* event add/edit form styling below > comment > friends*/
 form.event {
     border: 2px solid black;
 }
 
-.event fieldset {
-    display:  flex;
+.event fieldset.event {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+    max-width: 100%;
+}
+
+.event section.tagmap {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing:100%;
+}
+/* home/friend page comment related styling below*/
+.comment.form--container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.comment.form--container form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+fieldset.comment {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
@@ -68,21 +124,26 @@ form.event {
     margin: 3px;
     padding-inline: 5px;
 }
-.event section.tagmap {
+
+.comment.form--container .button--container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.comment.form--container textarea {
+    width: auto;
+    height: 100px;
+}
+/* home page friends list styling below */
 .home .friends {
-    display:flex;
+    display: flex;
     flex-direction: column;
     max-height: 55vh;
     overflow-y: auto;
 }
 
 .home .friend--box {
-    display:flex;
-    
+    display: flex;
     flex-direction: column;
 }
 
