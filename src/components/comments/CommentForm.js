@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { deleteComment, postComment, updateComment } from "../managers/CommentManager"
 
 export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange }) => {
+    const user = JSON.parse(localStorage.getItem('dd_user'))
     const [comments, setComments] = useState(eventToChange.comments)
     const [comment, setComment] = useState({
         comment: "",
@@ -55,16 +56,17 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                                 </div>
                                 <div className="commenter--and--button--container">
                                     <div className="comment--button--container">
-                                        {/* <button className="comment--edit">
-                                            ✏
-                                        </button> */}
-                                        <button className="comment--delete"
-                                            onClick={() => {
-                                                deleteComment(comment)
-                                                closeForm()
-                                            }}>
-                                            ❌
-                                        </button>
+                                        {user.id === comment.commenter.id ? <>
+                                            {/* <button className="comment--edit">✏</button> */}
+                                            <button type="button" className="comment--delete"
+                                                onClick={() => {
+                                                    deleteComment(comment)
+                                                    closeForm()
+                                                }}>
+                                                ❌
+                                            </button>
+                                        </>
+                                            : <></>}
                                     </div>
                                     <div className="commenter">
                                         -{comment.commenter.name}
