@@ -32,7 +32,7 @@ export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefin
                             </div>
                         </div>
                         <div className="button--container">
-                            <button className="event--comment"
+                            <button className="event--comment" title="View/Post/Delete Comments"
                                 onClick={() => [setEventToChange({ id: e.id, comments: e.comments }), setEditingComment(true)]}>
                                 💬
                                 <div className="comment--count">
@@ -41,11 +41,11 @@ export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefin
                             </button>
                             {!friend ?
                                 <>
-                                    <button className="event--edit"
+                                    <button className="event--edit" title="Edit this event"
                                         onClick={() => [setEventToChange(e), setEditingEvent(true)]}>
                                         ✏
                                     </button>
-                                    <button className="event--delete"
+                                    <button className="event--delete" title="Delete this Event"
                                         onClick={() => {
                                             deleteEvent(e)
                                                 .then(() => {
