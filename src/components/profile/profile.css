@@ -1,11 +1,14 @@
 article.profile--container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
 section.friends {
     margin-top: 3px;
     border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
 }
 
 .friend--box {
@@ -46,9 +49,11 @@ form.friend {
     margin-block: 3px;
 }
 
-section.tags {
+article section.tags {
     margin-top: 3px;
     border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
 }
 
 .tag--box {

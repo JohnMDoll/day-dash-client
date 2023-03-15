@@ -1,0 +1,35 @@
+.weather--subheader {
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.weather h5, .weather h6{
+    margin-block: 5px;
+}
+
+.weather .current--weather {
+    border-bottom: 1px dashed black;
+    padding-left: 3px;
+}
+
+.weather .forecast {
+    display: flex;
+    padding-left: 3px;
+}
+
+.forecast div + div {
+    padding-left: 3px;
+    border-left: 1px dashed black;
+}
+
+.weatherAPI--credit--container {
+    font-size: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.weatherAPI--credit {
+    height: 20px;
+}

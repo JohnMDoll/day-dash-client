@@ -8,8 +8,13 @@ export const Navbar = () => {
             <a href="/home" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
                 🏠
             </a>
-            <a href="/profile" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
-                👥
+            <a href="/profile" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px', position: 'relative' }}>
+                <span style={{ position: 'relative', transform: 'translate(-20%, -20%) translateY(-2px)'}}>
+                    👥
+                </span>
+                <span
+                    style={{position: 'absolute', content: '""', width: '100%', height: '100%', top: '80%', left: '80%', borderRadius: '1000px', transform: 'translate(-50%, -50%) translateY(-2px)'}}>🔖
+                </span>
             </a>
             <a href="/login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
                 🚪
