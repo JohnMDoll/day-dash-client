@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/day-dash-client/static/css/main.8de7db4e.css",
+    "main.js": "/day-dash-client/static/js/main.1c4e1d57.js",
+    "index.html": "/day-dash-client/index.html",
+    "main.8de7db4e.css.map": "/day-dash-client/static/css/main.8de7db4e.css.map",
+    "main.1c4e1d57.js.map": "/day-dash-client/static/js/main.1c4e1d57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8de7db4e.css",
+    "static/js/main.1c4e1d57.js"
+  ]
+}
