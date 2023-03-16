@@ -1,5 +1,5 @@
 export const loginUser = (user) => {
-    return fetch("http://localhost:8000/login", {
+    return fetch("https://walrus-app-777xe.ondigitalocean.app/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
