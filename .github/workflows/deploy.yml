@@ -3,10 +3,10 @@ name: Build & deploy
 on:
   push:
     branches:
-      - main
+      - gh_pages
   pull_request:
     branches:
-      - main
+      - gh_pages
 
 jobs:
   build:
