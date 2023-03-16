@@ -1,4 +1,6 @@
+
 {
+  "homepage" : "https://johnmdoll.github.io/day-dash-client/",
   "name": "day-dash",
   "version": "0.1.0",
   "private": true,
