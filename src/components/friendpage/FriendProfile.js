@@ -22,7 +22,13 @@ export const FriendProfile = () => {
 
         getFrienderEvents(frienderId)
             .then(res => setEvents(res))
-    }, [frienderId, editingComment]
+    }, [frienderId]
+    )
+
+    useEffect(() => {
+        getFrienderEvents(frienderId)
+            .then(res => setEvents(res))
+    }, [editingComment]
     )
 
     return <>

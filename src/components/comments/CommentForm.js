@@ -61,7 +61,7 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                                             <button type="button" className="comment--delete"
                                                 onClick={() => {
                                                     deleteComment(comment)
-                                                    closeForm()
+                                                        .then(closeForm())
                                                 }}>
                                                 ❌
                                             </button>

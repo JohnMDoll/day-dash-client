@@ -19,7 +19,7 @@ export const loginUser = (user) => {
 }
 
 export const registerUser = (user) => {
-    return fetch("http://127.0.0.1:8000/register", {
+    return fetch("https://walrus-app-777xe.ondigitalocean.app/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const registerUser = (user) => {
         .then(res => res.json())
         .then(authInfo => {
             if (authInfo.valid) {
-                localStorage.setItem("dd_token", JSON.stringify(authInfo.token))
+                localStorage.setItem("dd_token", JSON.stringify({"token": authInfo.token}))
                 localStorage.setItem("dd_user", JSON.stringify({ "firstName": authInfo.firstName, "zipcode": authInfo.zipcode, "id":authInfo.id  }))
             } else {
                 window.alert(authInfo.message)
