@@ -1,10 +1,5 @@
 .login.form--container {
-    max-width: 25%;
-}
-
-fieldset.login {
-    display: flex;
-    justify-self: space-between;
+    width: fit-content;
 }
 
 form.login {
@@ -19,4 +14,17 @@ fieldset.login  {
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
+    max-width: 100%;
+    min-width: fit-content;
+}
+
+.login label#check{
+    color: red;
+}
+
+.login.button--container{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3px;
+    padding-bottom: 3px;
 }

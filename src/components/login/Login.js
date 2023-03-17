@@ -68,7 +68,7 @@ export const Login = () => {
                                 className="login form--field"
                                 placeholder="email@domain.com"
                                 onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} />
-                            <label htmlFor="emailInput" className="login email">
+                            <label htmlFor="emailInput" className="login email" id="check" >
                                 {user.email === newUser.email ? "" : "Check Email"}
                             </label>
                         </fieldset>
@@ -82,8 +82,8 @@ export const Login = () => {
                                 className="login form--field"
                                 placeholder="**********"
                                 onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} />
-                            <label htmlFor="passwordInput" className="login password">
-                                {user.password === newUser.password ? "" : "Passwords not matching"}
+                            <label htmlFor="passwordInput" className="login password" id="check" >
+                                {user.password === newUser.password ? "" : "Check Password"}
                             </label>
                         </fieldset>
                         <fieldset className="login">
