@@ -10,7 +10,7 @@ export const DayDash = () => {
 	return <Routes>
 		<Route path="/login" element={<Login />} />
 
-		<Route path="*" element={
+		<Route path="/day-dash-client/*" element={
 			<Authorized>
 				<Navbar />
 				<ApplicationViews />
