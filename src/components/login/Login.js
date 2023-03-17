@@ -21,7 +21,7 @@ export const Login = () => {
     const submitHandler = async (e) => {
         e.preventDefault()
         await (register? registerUser(newUser) : loginUser(user))
-        if (localStorage.getItem("dd_user")) {navigate("/home")}
+        if (localStorage.getItem("dd_user")) {navigate("/day-dash-client//home")}
     }
 
     return <main className="container--login">
