@@ -130,6 +130,14 @@ form.event {
     flex-wrap: wrap;
     box-sizing:100%;
 }
+
+.event.button--container{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3px;
+    padding-bottom: 3px;
+}
+
 /* home/friend page comment related styling below*/
 .comment.form--container {
     display: flex;
