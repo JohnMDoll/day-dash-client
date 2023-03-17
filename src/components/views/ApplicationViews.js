@@ -11,7 +11,7 @@ export const ApplicationViews = () => {
           <Outlet />
         </>
       }>
-        <Route path="/home" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path={`/friend/:id`} element={<FriendProfile />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
