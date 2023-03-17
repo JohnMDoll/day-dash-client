@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { loginUser, registerUser } from "../managers/AuthManager"
 
 export const Login = () => {
-    localStorage.removeItem("dd_token")
     const navigate = useNavigate()
     const [register, setRegister] = useState(false)
     const [user, setUser] = useState({
