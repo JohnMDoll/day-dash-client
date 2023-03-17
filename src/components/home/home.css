@@ -95,6 +95,7 @@ section.agenda div button {
 
 section.agenda div button.event--comment {
     font-size: x-small;
+    font-weight: bolder;
     padding-left: 14px;
     padding-top: 4px;
 }

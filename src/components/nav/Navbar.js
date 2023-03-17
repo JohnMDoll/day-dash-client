@@ -5,7 +5,7 @@ export const Navbar = () => {
         <div style={{ marginTop: '0.45vh', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '24px' }}>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
-            <a title="home" href="" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
+            <a title="Home" href="" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
                 🏠
             </a>
             <a title="Add people who can see your events & add or edit tags" href="#/profile" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px', position: 'relative' }}>
@@ -16,7 +16,7 @@ export const Navbar = () => {
                     style={{position: 'absolute', content: '""', width: '100%', height: '100%', top: '80%', left: '80%', borderRadius: '1000px', transform: 'translate(-50%, -50%) translateY(-2px)'}}>🔖
                 </span>
             </a>
-            <a title="logout" href="#/login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}
+            <a title="Logout" href="#/login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}
             >
                 🚪
             </a>
