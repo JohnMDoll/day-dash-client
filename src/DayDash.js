@@ -12,8 +12,10 @@ export const DayDash = () => {
 
 		<Route path="*" element={
 			<Authorized>
+				<>
 				<Navbar />
 				<ApplicationViews />
+				</>
 			</Authorized>
 		} />
 	</Routes>
