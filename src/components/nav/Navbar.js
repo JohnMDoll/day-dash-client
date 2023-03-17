@@ -16,8 +16,8 @@ export const Navbar = () => {
                     style={{position: 'absolute', content: '""', width: '100%', height: '100%', top: '80%', left: '80%', borderRadius: '1000px', transform: 'translate(-50%, -50%) translateY(-2px)'}}>🔖
                 </span>
             </a>
-            <a style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}
-            onClick={localStorage.removeItem("dd_token")}>
+            <a href="#/login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}
+            >
                 🚪
             </a>
         </div>

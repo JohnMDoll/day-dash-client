@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { loginUser, registerUser } from "../managers/AuthManager"
 
 export const Login = () => {
+    localStorage.removeItem("dd_token")
     const navigate = useNavigate()
     const [register, setRegister] = useState(false)
     const [user, setUser] = useState({
@@ -24,7 +25,7 @@ export const Login = () => {
     }
 
     return <main className="container--login">
-        <h1>Welcome Day Dash</h1>
+        <h1>Welcome to Day Dash</h1>
         <section className="login form--container">
             <form className="login" onSubmit={submitHandler}>
                 <fieldset className="login">
