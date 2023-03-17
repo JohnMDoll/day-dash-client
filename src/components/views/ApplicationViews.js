@@ -6,10 +6,10 @@ import { Profile } from "../profile/Profile";
 export const ApplicationViews = () => {
 	return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" replace />} />
-      <Route path="/home" element={<Home />} />
-      <Route path={`/friend/:id`} element={<FriendProfile />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/day-dash-client" element={<Navigate to="/home" replace />} />
+      <Route path="/day-dash-client/home" element={<Home />} />
+      <Route path={`/day-dash-client/friend/:id`} element={<FriendProfile />} />
+      <Route path="/day-dash-client/profile" element={<Profile />} />
     </Routes>
   );
 }
