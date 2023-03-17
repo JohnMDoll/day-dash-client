@@ -8,7 +8,7 @@ import { Navbar } from './components/nav/Navbar';
 
 export const DayDash = () => {
 	return <Routes>
-		<Route path="/day-dash-client//login" element={<Login />} />
+		<Route path="/day-dash-client/login" element={<Login />} />
 
 		<Route path="/day-dash-client/*" element={
 			<Authorized>
