@@ -5,10 +5,10 @@ export const Navbar = () => {
         <div style={{ marginTop: '0.45vh', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '24px' }}>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
-            <a href="/day-dash-client//home" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
+            <a href="/day-dash-client/home" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
                 🏠
             </a>
-            <a href="/day-dash-client//profile" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px', position: 'relative' }}>
+            <a href="/day-dash-client/profile" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px', position: 'relative' }}>
                 <span style={{ position: 'relative', transform: 'translate(-20%, -20%) translateY(-2px)'}}>
                     👥
                 </span>
@@ -16,7 +16,7 @@ export const Navbar = () => {
                     style={{position: 'absolute', content: '""', width: '100%', height: '100%', top: '80%', left: '80%', borderRadius: '1000px', transform: 'translate(-50%, -50%) translateY(-2px)'}}>🔖
                 </span>
             </a>
-            <a href="/day-dash-client//login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
+            <a href="/day-dash-client/login" style={{ width: '40%', display: 'flex', alignItems: 'center', backgroundColor: '#fff', textDecoration: 'none', border: '1px solid white', padding: '5px', marginBlock: '1.5vh', borderRadius: '1000px' }}>
                 🚪
             </a>
         </div>
