@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { loginUser, registerUser } from "../managers/AuthManager"
+import "./login.css"
 
 export const Login = () => {
     localStorage.removeItem("dd_token")
