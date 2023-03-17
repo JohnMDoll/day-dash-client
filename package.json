@@ -1,6 +1,5 @@
 {
   "name": "day-dash",
-  "homepage": "https://starfish-app-7idti.ondigitalocean.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
