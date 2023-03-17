@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { deleteComment, postComment, updateComment } from "../managers/CommentManager"
 
 export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange }) => {
-    const user = JSON.parse(localStorage.getItem('dd_user'))
+    const user = JSON.parse(localStorage.getItem('dd_token'))
     const [comments, setComments] = useState(eventToChange.comments)
     const [comment, setComment] = useState({
         comment: "",

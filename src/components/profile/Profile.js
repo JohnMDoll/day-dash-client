@@ -3,7 +3,7 @@ import { Friends } from "../friends/Friends"
 import "./profile.css"
 
 export const Profile = () => {
-    const user = JSON.parse(localStorage.getItem("dd_user"))
+    const user = JSON.parse(localStorage.getItem("dd_token"))
 
     return <>
         <h1>{user.firstName}'s Dash Management</h1>
