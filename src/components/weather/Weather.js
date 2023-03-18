@@ -24,7 +24,7 @@ export const Weather = ({ friendId }) => {
             </div>
             <div className="current--weather">
                 <div className="all--current">
-                    <h5>Now</h5>
+                    <h5>Current</h5>
                     <div className="temp">
                         {weather.current.temp}°F
                     </div>

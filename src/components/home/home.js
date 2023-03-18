@@ -4,6 +4,7 @@ import { Agenda } from "../event/Agenda"
 import { EventForm } from "../event/EventForm"
 import { Frienders } from '../friends/Frienders'
 import { getUserEvents } from "../managers/EventManager"
+import { ReadIt } from '../utils/readIt'
 import { Weather } from '../weather/Weather'
 import "./home.css"
 
@@ -29,6 +30,7 @@ export const Home = () => {
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <h1>Welcome {user.firstName || "friend"}</h1>
+        <ReadIt events={events} />
         <article className="home--container">
             <section className="home weather--container" >
                 <h3 className="weather--header">Your Weather</h3>
@@ -62,7 +64,7 @@ export const Home = () => {
                         />
                         <button className="new--event"
                             onClick={(e) => setEditingEvent(!editingEvent)}>
-                            Add Event
+                            New Event
                         </button>
                     </>
                 }
