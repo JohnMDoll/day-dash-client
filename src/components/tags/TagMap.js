@@ -20,7 +20,7 @@ export const TagMap = ({ existingTags, resultTags = undefined }) => {
     useEffect(() => {
         if (existingTags) {
         let tagCopy = [...existingTags]
-        tagCopy.map((tag) => {return tag.id})
+        tagCopy.forEach((tag) => {return tag.id})
         setActiveTags(tagCopy)
     }
     }, [existingTags]
