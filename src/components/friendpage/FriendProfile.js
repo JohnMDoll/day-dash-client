@@ -64,6 +64,7 @@ export const FriendProfile = () => {
                 {editingComment ?
                     <CommentForm
                         eventToChange={eventToChange}
+                        setEventToChange={setEventToChange}
                         needCommentEditor={setEditingComment}
                         existingComment={commentToChange}
                         setCommentToChange={setCommentToChange}
