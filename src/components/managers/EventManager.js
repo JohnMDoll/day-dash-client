@@ -2,12 +2,14 @@ import { fetchIt } from "../utils/fetchIt.js"
 
 const API = "https://walrus-app-777xe.ondigitalocean.app"
 
-export const getUserEvents = () => {
-    return fetchIt(`${API}/events`)
+export const getUserEvents = async () => {
+    const response = await fetchIt(`${API}/events`)
+    return response
 }
 
-export const getFrienderEvents = (frienderId) => {
-    return fetchIt(`${API}/events?friender=${frienderId}`)
+export const getFrienderEvents = async (frienderId) => {
+    const response = await fetchIt(`${API}/events?friender=${frienderId}`)
+    return response
 }
 
 export const postNewEvent = async (event) => {

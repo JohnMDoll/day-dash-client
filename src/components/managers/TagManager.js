@@ -2,8 +2,9 @@ import { fetchIt } from "../utils/fetchIt.js"
 
 const API = "https://walrus-app-777xe.ondigitalocean.app"
 
-export const getTags = () => {
-    return fetchIt(`${API}/tags`)
+export const getTags = async () => {
+    const response = fetchIt(`${API}/tags`)
+    return response
 }
 
 export const postTag = async (tag) => {
