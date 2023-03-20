@@ -4,14 +4,14 @@ import "./weather.css"
 
 export const Weather = ({ friendId, setWeatherCondition }) => {
     const [weather, setWeather] = useState({})
-    // const weather = fetchIt(`http://localhost:8000/weather`)
+    // const weather = fetchIt(`https://walrus-app-777xe.ondigitalocean.app//weather`)
     useEffect(() => {
         if (!weather.hasOwnProperty('current')) {
             if (friendId) {
-                fetchIt(`http://localhost:8000/weather/${friendId}`)
+                fetchIt(`https://walrus-app-777xe.ondigitalocean.app//weather/${friendId}`)
                     .then(res => setWeather(res))
             } else {
-                fetchIt(`http://localhost:8000/weather`)
+                fetchIt(`https://walrus-app-777xe.ondigitalocean.app//weather`)
                     .then(res => setWeather(res))
             }
         }
