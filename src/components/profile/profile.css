@@ -11,9 +11,11 @@ section.friends {
     overflow-y: auto;
 }
 
-section.tags{
-    background-color: rgba(128, 207, 165, 0.2); /* Add transparency */
-    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+section.tags {
+    background-color: rgba(128, 207, 165, 0.2);
+    /* Add transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
@@ -21,13 +23,14 @@ section.tags{
 }
 
 .friend--box {
-    display:  flex;
+    display: flex;
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
-    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -42,7 +45,7 @@ form.friend {
 }
 
 .friend fieldset {
-    display:  flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
@@ -51,22 +54,27 @@ form.friend {
     padding-inline: 5px;
 }
 
-form.tag, form.friend{
-    background-color: rgba(128, 207, 165, 0.2); /* Add transparency */
-    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+form.tag,
+form.friend {
+    background-color: rgba(128, 207, 165, 0.2);
+    /* Add transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
 }
 
-fieldset.tag, fieldset.email {
-    display:  flex;
+fieldset.tag,
+fieldset.email {
+    display: flex;
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
-    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -87,8 +95,9 @@ article section.tags {
 }
 
 .tag--box {
-    display:flex;
-    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+    display: flex;
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
     background-color: rgba(255, 255, 255, 0.7);
     justify-content: space-between;
     border: 1px solid black;
@@ -103,7 +112,8 @@ section.tags div button {
     margin: 5px;
 }
 
-.tools--container, .friends--container{
+.tools--container,
+.friends--container {
     text-align: center;
 }
 
@@ -112,7 +122,7 @@ section.tags div button {
 }
 
 .tools--container .tag fieldset {
-    display:  flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
@@ -131,7 +141,7 @@ section.tags div button {
 }
 
 .tag--box .tag fieldset {
-    display:  flex;
+    display: flex;
     justify-content: space-between;
     border: none;
     padding: 0;
@@ -147,7 +157,8 @@ section.tags div button {
     margin: 0;
 }
 
-fieldset.tag, .tag.form--field {
+fieldset.tag,
+.tag.form--field {
     padding: 0;
 }
 
@@ -160,14 +171,14 @@ fieldset.tag, .tag.form--field {
     left: 0;
     height: 100vh;
     width: 100vw;
-  }
-  
-  section.tags--container{
-    display: block;
-    
-  }
+}
 
-  button.profile-button {
+section.tags--container {
+    display: block;
+
+}
+
+button.profile-button {
     background-color: #80cfa5;
     border: none;
     color: white;
@@ -180,7 +191,7 @@ fieldset.tag, .tag.form--field {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
     margin: 5px;
-    width:70%;
+    width: 70%;
 }
 
 button.profile-button-cancel {
@@ -204,8 +215,9 @@ button.profile-button:hover {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-  button.profile-button-cancel:hover {
-    background-color: #8b5a56;;
+button.profile-button-cancel:hover {
+    background-color: #8b5a56;
+    ;
     color: #fff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }

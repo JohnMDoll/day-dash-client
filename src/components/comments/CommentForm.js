@@ -82,7 +82,7 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                         Write a comment!
                     </label>
                     <textarea type="text"
-                        class="commentInput"
+                        className="commentInput"
                         id="commentInput"
                         required autoFocus
                         placeholder="Don't forget the thing!"

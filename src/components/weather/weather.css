@@ -17,7 +17,8 @@
     margin-bottom: 10px;
 }
 
-.weather h5, .weather h6 {
+.weather h5,
+.weather h6 {
     margin-block: 5px;
 }
 
@@ -37,7 +38,9 @@
     margin-bottom: 5px;
 }
 
-.weather .condition, .weather .humidity, .weather .wind {
+.weather .condition,
+.weather .humidity,
+.weather .wind {
     font-size: 18px;
     margin-bottom: 5px;
 }
@@ -46,12 +49,14 @@
     display: flex;
     justify-content: space-around;
     padding: 2px 0;
-    flex-wrap: wrap; /* To make it responsive */
+    flex-wrap: wrap;
+    /* To make it responsive */
 }
 
-.forecast div + div {
+.forecast div+div {
     padding-left: 3px;
-    border-left: none; /* Remove the border */
+    border-left: none;
+    /* Remove the border */
 }
 
 .weatherAPI--credit--container {
@@ -66,7 +71,8 @@
     cursor: pointer;
 }
 
-.today, .tomorrow {
+.today,
+.tomorrow {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 15px;
     margin: 10px;
@@ -74,7 +80,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.today img, .tomorrow img {
+.today img,
+.tomorrow img {
     display: block;
     margin: 0 auto 10px;
 }
