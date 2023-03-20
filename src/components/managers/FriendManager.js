@@ -14,15 +14,17 @@ export const getFriender = (frienderId) => {
     return fetchIt(`${API}/friends/${frienderId}`)
 }
 
-export const postFriend = (friend) => {
-    return fetchIt(`${API}/friends`, {
+export const postFriend = async (friend) => {
+    const response = await fetchIt(`${API}/friends`, {
         method: 'POST',
         body: JSON.stringify(friend)
     })
+    return response
 }
 
-export const deleteFriend = (friend) => {
-    return fetchIt(`${API}/friends/${friend.id}`, {
+export const deleteFriend = async (friend) => {
+    const response = fetchIt(`${API}/friends/${friend.id}`, {
         method: 'DELETE'
     })
+    return response
 }
