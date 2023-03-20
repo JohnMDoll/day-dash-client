@@ -1,6 +1,6 @@
 import { fetchIt } from "../utils/fetchIt.js"
 
-const API = "https://walrus-app-777xe.ondigitalocean.app/"
+const API = "https://walrus-app-777xe.ondigitalocean.app"
 
 export const getUserEvents = () => {
     return fetchIt(`${API}/events`)
