@@ -2,20 +2,26 @@ import { useEffect, useState } from "react"
 import { fetchIt } from "../utils/fetchIt"
 import "./weather.css"
 
-export const Weather = ({ friendId }) => {
+export const Weather = ({ friendId, setWeatherCondition }) => {
     const [weather, setWeather] = useState({})
-    // const weather = fetchIt(`https://walrus-app-777xe.ondigitalocean.app/weather`)
+    // const weather = fetchIt(`http://localhost:8000/weather`)
     useEffect(() => {
         if (!weather.hasOwnProperty('current')) {
             if (friendId) {
-                fetchIt(`https://walrus-app-777xe.ondigitalocean.app/weather/${friendId}`)
+                fetchIt(`http://localhost:8000/weather/${friendId}`)
                     .then(res => setWeather(res))
             } else {
-                fetchIt(`https://walrus-app-777xe.ondigitalocean.app/weather`)
+                fetchIt(`http://localhost:8000/weather`)
                     .then(res => setWeather(res))
             }
         }
-    })
+    },[])
+
+    useEffect(() => {
+        if (weather.hasOwnProperty("current")) {
+            setWeatherCondition(weather.current.condition);
+        }
+    }, [weather]);
 
     return (<>
         {weather.hasOwnProperty('current') ? <section className="weather">
@@ -25,6 +31,9 @@ export const Weather = ({ friendId }) => {
             <div className="current--weather">
                 <div className="all--current">
                     <h5>Now</h5>
+                    <div className="icon">
+                        <img src={`http:${weather.current.icon}`}></img>
+                    </div>
                     <div className="temp">
                         {weather.current.temp}°F
                     </div>
@@ -42,15 +51,17 @@ export const Weather = ({ friendId }) => {
             <div className="forecast">
                 <div className="today">
                     <h5>Today</h5>
-                    High {weather.today.high} <br />
-                    Low {weather.today.low} <br />
+                    <img src={`http:${weather.today.icon}`}/>
+                    High {weather.today.high}°F <br />
+                    Low {weather.today.low}°F <br />
                     {weather.today.condition} <br />
                     Rain chance {weather.today.rain}% <br />
                 </div>
                 <div className="tomorrow">
                     <h5>Tomorrow</h5>
-                    High {weather.tomorrow.high} <br />
-                    Low {weather.tomorrow.low} <br />
+                    <img src={`http:${weather.tomorrow.icon}`}/>
+                    High {weather.tomorrow.high}°F <br />
+                    Low {weather.tomorrow.low}°F <br />
                     {weather.tomorrow.condition} <br />
                     Rain chance {weather.tomorrow.rain}% <br />
                 </div>

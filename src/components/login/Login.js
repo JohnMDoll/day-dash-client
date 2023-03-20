@@ -26,7 +26,10 @@ export const Login = () => {
     }
 
     return <main className="container--login">
+                <div id="login-background"></div>
         <h1>Welcome to Day Dash</h1>
+                    <center><p>Ready to get started on your day? <br></br>
+                        Login or register now!</p></center>
         <section className="login form--container">
             <form className="login" onSubmit={submitHandler}>
                 <fieldset className="login">
@@ -55,7 +58,7 @@ export const Login = () => {
                     <>
                         <div className="login button--container">
                             <button type="submit" className="login--button">Log In</button>
-                            <button onClick={() => setRegister(true)}>Register</button>
+                            <button className="login--button" onClick={() => setRegister(true)}>Register</button>
                         </div>
                     </> : <>
                         <fieldset className="login">
@@ -121,7 +124,7 @@ export const Login = () => {
                         </fieldset>
                         <div className="login button--container">
                             <button type="submit" className="register--button">Submit</button>
-                            <button onClick={() => setRegister(false)}>Cancel Registration</button>
+                            <button  className="register--button--cancel" onClick={() => setRegister(false)}>Cancel Registration</button>
                         </div>
                     </>
                 }

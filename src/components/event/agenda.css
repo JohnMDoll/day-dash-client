@@ -1,0 +1,101 @@
+.tags--container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    gap: 4px; /* Reduce the gap between tags */
+    align-items: center;
+}
+
+.tag-span {
+    background-color: #80cfa5;
+    color: white;
+    text-align: center;
+    display: inline-flex;
+    font-size: 11px;
+    padding: 4px 8px; /* Reduce the padding */
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.agenda {
+    padding-left: 20px;
+  }
+  
+  .event--container {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    background-image: linear-gradient(0deg, transparent 90%, #94c8ff 90%); /* Add repeating blue lines */
+    background-size: 100% 20px; /* Set the size of the lines */
+  }
+  
+  .event--container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    width: 4px;
+    background-color: #ff94c8;
+  }
+  
+  .details--container > div {
+    padding-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .details--container > div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+
+.eventFormSubmit--button {
+  background-color: #80cfa5;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.eventFormCancel--button {
+    background-color: #cf8780;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+.eventFormSubmit--button:hover{
+  background-color: #4a9570;
+}
+
+.eventFormCancel--button:hover {
+    background-color: #8b5a56;
+}

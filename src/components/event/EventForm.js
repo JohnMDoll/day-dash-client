@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { postNewEvent, updateEvent } from "../managers/EventManager"
 import { TagMap } from "../tags/TagMap"
+import "./agenda.css"
 
 export const EventForm = ({ needEventEditor, setEventToChange, event = {}}) => {
     const [eventTags, setEventTags] = useState([])

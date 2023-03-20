@@ -1,20 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 ::-webkit-scrollbar {
-    width: 3px;
+    width: 0px;
     color: aquamarine;
 }
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgb(231, 244, 251);
+    border-radius: 1vh;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(110, 118, 136);
-    border-radius: 100px;
-    padding-left: 20px;
+    background: transparent;
+    border-radius: 1vh;
 }
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-shadow:
+      -2px -2px 0 #000,  
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000;
+  }
+
+  
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-shadow:
+      -2px -2px 0 #000,  
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000;
+  }
+  
+
+  #background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.sunny #background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/sun.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+  }
+  
+  .rainy #background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/rain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+}
+
+.cloudy #background::before,
+.clear #background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/cloudy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+}
+
+
+section.weather,
+section.friends,
+section.agenda {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
 
 .home--container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 
 section.weather {
@@ -80,6 +168,28 @@ section.agenda {
     justify-content: flex-start;
 }
 
+button.new--event {
+    background-color: #80cfa5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+        display: block;
+        margin: 0 auto;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button.new--event:hover {
+    background-color: #6cb08c;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+
 section.agenda div button {
     display: flex;
     position: relative;
@@ -111,32 +221,70 @@ section.agenda div button .comment--count {
 }
 /* event add/edit form styling below > comment > friends*/
 form.event {
-    border: 2px solid black;
-}
-
-.event fieldset.event {
+    border: transparent;
+    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative; /* Add position: relative */
+    padding: 20px; /* Add padding */
+    border-radius: 1vh; /* Add border-radius */
+  }
+  
+  .event fieldset.event {
+    border: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
     max-width: 100%;
-}
-
-.event section.tagmap {
+  }
+  
+  .event section.tagmap {
     display: flex;
     flex-wrap: wrap;
-    box-sizing:100%;
-}
-
-.event.button--container{
+    box-sizing: 100%;
+  }
+  
+  .event.button--container {
     display: flex;
     justify-content: space-between;
     padding-inline: 3px;
     padding-bottom: 3px;
-}
+  }
+  
+  /* Add new styles for blue lines */
+  form.event::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    width: 2px;
+    background-color: #ff94c8;
+  }
+  
+  /* Repeat blue lines */
+  form.event {
+    background-image: linear-gradient(0deg, transparent 90%, #94c8ff 90%, #94c8ff 100%);
+    background-size: 100% 20px;
+  }
+  
+  .details--container > div {
+    padding-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .details--container > div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
 
 /* home/friend page comment related styling below*/
 .comment.form--container {
@@ -199,11 +347,6 @@ fieldset.comment {
     justify-content: space-between;
 }
 
-.comment.form--container textarea {
-    width: auto;
-    min-width:min-content;
-    max-width: 83vw;
-}
 /* home page friends list styling below */
 .home .friends {
     display: flex;
@@ -215,8 +358,118 @@ fieldset.comment {
 .home .friend--box {
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .home .friend--box .friend--event {
     border-top: 1px dashed black;
 }
+
+section.weather,
+section.friends,
+section.agenda {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background-color: rgba(128, 207, 165, 0.2); /* Add transparency */
+    backdrop-filter: blur(10px); /* Add blur for frosted glass effect */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+section.weather {
+    border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+section.agenda {
+    border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+.agenda .event--container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+.agenda .details--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 80%;
+}
+
+.agenda label {
+    font-weight: 500;
+}
+
+.agenda div.detail {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+.agenda .event--location div.detail {
+    word-break: break-all; 
+    /* wraps solid strings, i.e. zoom links */
+}
+
+.agenda .event--name {
+    font-weight: bold;
+}
+
+.agenda .button--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+section.agenda div button {
+    display: flex;
+    position: relative;
+    border-radius: 30vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-inline: 5px;
+    margin-block: 15%;
+    justify-content: center;
+    width: 35px;
+    height: 25px;
+    align-content: center;
+}
+
+section.agenda div button.event--comment {
+    font-size: x-small;
+    font-weight: bolder;
+    padding-left: 14px;
+    padding-top: 4px;
+}
+
+section.agenda div button .comment--count {
+    /* display: flex; */
+    /* position: relative; */
+    background-color: red;
+    border-radius: 1000px;
+    font-size: xx-small;
+    padding-inline: 2.5px;
+    transform: translate(-30%, 0%);
+}
+
+section.home.schedule--container {
+    min-width: 215px;
+}
+
+@media screen and (min-width: 600px) {
+    section.home.schedule--container {
+        max-width: 30%;
+    }
+}
+
+

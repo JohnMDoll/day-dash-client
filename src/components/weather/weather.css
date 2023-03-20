@@ -1,10 +1,23 @@
+.weather {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .weather--subheader {
     display: flex;
     font-weight: 500;
     justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.weather h5, .weather h6{
+.weather h5, .weather h6 {
     margin-block: 5px;
 }
 
@@ -13,18 +26,36 @@
     padding-left: 3px;
 }
 
+.weather .icon img {
+    width: 80px;
+    height: 80px;
+}
+
+.weather .temp {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.weather .condition, .weather .humidity, .weather .wind {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
 .weather .forecast {
     display: flex;
-    padding-left: 3px;
+    justify-content: space-around;
+    padding: 2px 0;
+    flex-wrap: wrap; /* To make it responsive */
 }
 
 .forecast div + div {
     padding-left: 3px;
-    border-left: 1px dashed black;
+    border-left: none; /* Remove the border */
 }
 
 .weatherAPI--credit--container {
-    font-size: 8px;
+    font-size: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,4 +63,28 @@
 
 .weatherAPI--credit {
     height: 20px;
+    cursor: pointer;
+}
+
+.today, .tomorrow {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.today img, .tomorrow img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.forecast img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.weather h5 {
+    font-weight: bold;
 }

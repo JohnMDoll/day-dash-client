@@ -1,5 +1,6 @@
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
 import { timeFormatter } from "../utils/timeFormatter"
+import "./agenda.css"
 
 export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false, setCommentToChange, setEditingComment }) => {
 
@@ -28,6 +29,18 @@ export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefin
                                 <label>When:</label>
                                 <div className="detail">
                                     {timeFormatter(e.startDateTime)}-{timeFormatter(e.endDateTime)}
+                                </div>
+                            </div>
+                            <div className="event--tags">
+                                <label>Tags:</label>
+                                <div className="tags--container">
+                                    {e.tags.map((tag) => {
+                                        return (
+                                            <span className="tag-span" key={`event--${e.id}--tag--${tag.id}`}>
+                                                {tag.tag}
+                                            </span>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
