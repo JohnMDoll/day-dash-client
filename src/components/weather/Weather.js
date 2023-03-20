@@ -15,7 +15,7 @@ export const Weather = ({ friendId, setWeatherCondition }) => {
                     .then(res => setWeather(res))
             }
         }
-    },[])
+    }, [])
 
     useEffect(() => {
         if (weather.hasOwnProperty("current")) {
@@ -30,28 +30,30 @@ export const Weather = ({ friendId, setWeatherCondition }) => {
             </div>
             <div className="current--weather">
                 <div className="all--current">
-                    <h5>Now</h5>
+                    {/* <h5>Current</h5> */}
                     <div className="icon">
-                        <img src={`http:${weather.current.icon}`}></img>
+                        <img src={`http:${weather.current.icon}`} />
                     </div>
-                    <div className="temp">
-                        {weather.current.temp}°F
-                    </div>
-                    <div className="condition">
-                        {weather.current.condition}
-                    </div>
-                    <div className="humidity">
-                        Humidity {weather.current.humidity}
-                    </div>
-                    <div className="wind">
-                        Wind {weather.current.wind}mph
+                    <div className="today--weather--info">
+                        <div className="temp">
+                            {weather.current.temp}°F
+                        </div>
+                        <div className="condition">
+                            {weather.current.condition}
+                        </div>
+                        <div className="humidity">
+                            Humidity {weather.current.humidity}
+                        </div>
+                        <div className="wind">
+                            Wind {weather.current.wind}mph
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="forecast">
                 <div className="today">
                     <h5>Today</h5>
-                    <img src={`http:${weather.today.icon}`}/>
+                    <img src={`http:${weather.today.icon}`} />
                     High {weather.today.high}°F <br />
                     Low {weather.today.low}°F <br />
                     {weather.today.condition} <br />
@@ -59,7 +61,7 @@ export const Weather = ({ friendId, setWeatherCondition }) => {
                 </div>
                 <div className="tomorrow">
                     <h5>Tomorrow</h5>
-                    <img src={`http:${weather.tomorrow.icon}`}/>
+                    <img src={`http:${weather.tomorrow.icon}`} />
                     High {weather.tomorrow.high}°F <br />
                     Low {weather.tomorrow.low}°F <br />
                     {weather.tomorrow.condition} <br />

@@ -20,7 +20,7 @@ export const Frienders = () => {
                 return (
                     <section className="friend--box" key={`friend--${f.id}`}>
                         <div className="friend--name" title={`View more details for ${f.friend.name}`} onClick={() => navigate(`friend/${f.friend.id}`)} key={`home--friend--name--${f.id}`}>
-                            {f.friend.name}
+                            {f.friend.name} (click for details)
                         </div>
                         {f.events.map(e => {
                             return (

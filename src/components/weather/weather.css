@@ -20,6 +20,7 @@
 .weather h5,
 .weather h6 {
     margin-block: 5px;
+    width: 100%;
 }
 
 .weather .current--weather {
@@ -27,9 +28,21 @@
     padding-left: 3px;
 }
 
+.weather .all--current{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .weather .icon img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+}
+
+.today--weather--info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 }
 
 .weather .temp {
@@ -54,8 +67,8 @@
 }
 
 .forecast div+div {
-    padding-left: 3px;
-    border-left: none;
+    /* padding-left: 3px; */
+    /* border-left: none; */
     /* Remove the border */
 }
 
@@ -83,13 +96,12 @@
 .today img,
 .tomorrow img {
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 0;
 }
 
 .forecast img {
     width: 80px;
     height: 80px;
-    margin-bottom: 10px;
 }
 
 .weather h5 {

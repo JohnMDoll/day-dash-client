@@ -89,13 +89,6 @@ h3 {
     filter: blur(2px);
 }
 
-/* section.weather,
-section.friends,
-section.agenda {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-} */
-
 section.weather,
 section.friends,
 section.agenda {
@@ -237,11 +230,8 @@ form.event {
     /* Add blur for frosted glass effect */
     background-color: rgba(255, 255, 255, 0.7);
     position: relative;
-    /* Add position: relative */
     padding: 20px;
-    /* Add padding */
     border-radius: 1vh;
-    /* Add border-radius */
 }
 
 .event fieldset.event {
@@ -379,4 +369,6 @@ fieldset.comment {
     border-top: 1px dashed black;
 }
 
-
+.friend--name {
+    cursor: pointer;
+}
