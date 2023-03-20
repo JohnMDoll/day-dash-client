@@ -11,13 +11,27 @@ section.friends {
     overflow-y: auto;
 }
 
+section.tags {
+    background-color: rgba(128, 207, 165, 0.2);
+    /* Add transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+    padding: 15px;
+}
+
 .friend--box {
-    display:  flex;
+    display: flex;
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 section.friends div button {
@@ -31,13 +45,37 @@ form.friend {
 }
 
 .friend fieldset {
-    display:  flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
+}
+
+form.tag,
+form.friend {
+    background-color: rgba(128, 207, 165, 0.2);
+    /* Add transparency */
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+}
+
+fieldset.tag,
+fieldset.email {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin: 3px;
+    padding-inline: 5px;
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .friend .button--container {
@@ -57,7 +95,10 @@ article section.tags {
 }
 
 .tag--box {
-    display:  flex;
+    display: flex;
+    backdrop-filter: blur(10px);
+    /* Add blur for frosted glass effect */
+    background-color: rgba(255, 255, 255, 0.7);
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 1vh;
@@ -71,12 +112,17 @@ section.tags div button {
     margin: 5px;
 }
 
+.tools--container,
+.friends--container {
+    text-align: center;
+}
+
 .tools--container form.tag {
     border: 2px solid black;
 }
 
 .tools--container .tag fieldset {
-    display:  flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid black;
@@ -95,7 +141,7 @@ section.tags div button {
 }
 
 .tag--box .tag fieldset {
-    display:  flex;
+    display: flex;
     justify-content: space-between;
     border: none;
     padding: 0;
@@ -111,6 +157,86 @@ section.tags div button {
     margin: 0;
 }
 
-fieldset.tag, .tag.form--field {
+fieldset.tag,
+.tag.form--field {
     padding: 0;
+}
+
+.background--container {
+    background-image: url("./assets/foggy-glass.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+section.tags--container {
+    display: block;
+
+}
+
+button.profile-button {
+    background-color: #80cfa5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+    width: 70%;
+}
+
+button.profile-button-cancel {
+    background-color: #cf8780;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+button.profile-button:hover {
+    background-color: #6cb08c;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+button.profile-button-cancel:hover {
+    background-color: #8b5a56;
+    ;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.search-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #80cfa5;
+    box-shadow: 0 0 8px rgba(128, 207, 165, 0.3);
 }

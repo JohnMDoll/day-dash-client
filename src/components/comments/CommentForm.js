@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { deleteComment, postComment, updateComment } from "../managers/CommentManager"
+import "./comment.css"
 
 export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange }) => {
     const user = JSON.parse(localStorage.getItem('dd_token'))
@@ -81,7 +82,7 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                         Write a comment!
                     </label>
                     <textarea type="text"
-                        className="comment form--field"
+                        className="commentInput"
                         id="commentInput"
                         required autoFocus
                         placeholder="Don't forget the thing!"

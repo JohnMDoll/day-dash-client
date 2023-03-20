@@ -21,7 +21,7 @@ export const Friends = () => {
 
     const searchedFriends = (query) => {
         let searchResult = []
-        friendships.map(f => { 
+        friendships.map(f => {
             if (f.friend.name.toLowerCase().includes(query.toLowerCase())) {
                 searchResult.push(f)
             }
@@ -37,13 +37,14 @@ export const Friends = () => {
 
     return <>
         <section className="tools--container">
-            {needForm ?
-                <FriendForm setNeedForm={setNeedForm} />
-                :
-                <>
-                    <button type="button" onClick={() => setNeedForm(true)}>Add Friend</button>
-                    <input type="search" id="search" onChange={(e) => searchedFriends(e.target.value)} placeholder="Search"></input>
-                </>}
+            <input
+                type="search"
+                id="search"
+                className="search-input"
+                onChange={(e) => searchedFriends(e.target.value)}
+                placeholder="Search"
+            />
+
         </section>
         <section className="friends">
             {searchFriends.map((f) => {
@@ -66,5 +67,11 @@ export const Friends = () => {
                 )
             })}
         </section>
+        {needForm ?
+            <FriendForm setNeedForm={setNeedForm} />
+            :
+            <>
+                <button type="button" className="profile-button" onClick={() => setNeedForm(true)}>Add Friend</button>
+            </>}
     </>
 }

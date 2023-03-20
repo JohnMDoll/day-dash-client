@@ -9,34 +9,25 @@ export const Tags = () => {
     const [needNewForm, setNeedNewForm] = useState(false)
     const [needUpdateForm, setNeedUpdateForm] = useState(false)
 
-    useEffect(() => {
-        getTags()
-            .then(res => setTags(res))
-    }, []
-    )
-
+    
     const refreshTags = () => {
         getTags()
-            .then(res => setTags(res))
+        .then(res => setTags(res))
     }
 
     useEffect(() => {
+        refreshTags()
+    }, []
+    )
+
+    useEffect(() => {
         if (!needNewForm && !needUpdateForm) {
-            getTags()
-                .then(res => setTags(res))
+            refreshTags()
         }
     }, [needNewForm, needUpdateForm]
     )
 
     return <>
-        <section className="tools--container">
-            {needNewForm ?
-                <TagForm setNeedForm={setNeedNewForm} />
-                :
-                <>
-                    <button type="button" onClick={() => [setNeedNewForm(true), setUpdatingTag(0)]}>Add Tag</button>
-                </>}
-        </section>
         <section className="tags">
             {tags.map((t) => {
                 return (
@@ -60,6 +51,14 @@ export const Tags = () => {
                     </section>
                 )
             })}
+        </section>
+        <section className="tools--container">
+            {needNewForm ?
+                <TagForm setNeedForm={setNeedNewForm} />
+                :
+                <>
+                    <button type="button"  className="profile-button"  onClick={() => [setNeedNewForm(true), setUpdatingTag(0)]}>Add Tag</button>
+                </>}
         </section>
     </>
 }

@@ -31,8 +31,8 @@ export const FriendForm = ({ setNeedForm }) => {
                     value={friend.email}
                     onChange={(e) => setFriend({ ...friend, email: e.target.value })} />
                 <div className="friend button--container">
-                    <button type="submit" className="friendFormSubmit--button">Add Friend</button>
-                    <button type="button" className="friendFormCancel--button"
+                    <button type="submit" className="profile-button">Add Friend</button>
+                    <button type="button" className="profile-button-cancel"
                         onClick={closeForm} >
                         Cancel
                     </button>

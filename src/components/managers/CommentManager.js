@@ -1,6 +1,6 @@
 import { fetchIt } from "../utils/fetchIt.js"
 
-const API = "https://walrus-app-777xe.ondigitalocean.app"
+const API = "http://localhost:8000"
 
 export const getComments = () => {
     return fetchIt(`${API}/comments`)

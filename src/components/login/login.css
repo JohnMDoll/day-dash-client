@@ -1,16 +1,17 @@
 .login.form--container {
-    width: fit-content;
+    width: 25%;
+    position: fixed;
+    top: 55%;
+    left: 40%;
+    border: none;
+    transform: translateY(-50%);
 }
 
-form.login {
-    border: 2px solid black;
-}
-
-fieldset.login  {
-    display:  flex;
+fieldset.login {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
+    border: none;
     border-radius: 1vh;
     margin: 3px;
     padding-inline: 5px;
@@ -18,13 +19,100 @@ fieldset.login  {
     min-width: fit-content;
 }
 
-.login label#check{
+p {
+    margin-top: 5.3%;
+}
+
+form.login::before {
+    content: "";
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    width: 2px;
+    border-color: transparent;
+    background-color: #ff94c8;
+    z-index: -1;
+}
+
+form.login {
+    background-image: linear-gradient(0deg, transparent 90%, #94c8ff 90%, #94c8ff 100%);
+    background-size: 100% 20px;
+    border-color: transparent;
+    position: relative;
+}
+
+.login label#check {
     color: red;
 }
 
-.login.button--container{
+.login.button--container {
     display: flex;
     justify-content: space-between;
     padding-inline: 3px;
     padding-bottom: 3px;
+}
+
+#login-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("./assets/login.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.register--button,
+.login--button {
+    background-color: #80cfa5;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+    width: 39%;
+}
+
+.register--button--cancel {
+    background-color: #cf8780;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.register--button:hover {
+    background-color: #6cb08c;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.login--button:hover {
+    background-color: #6cb08c;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.register--button--cancel:hover {
+    background-color: #8b5a56;
+    ;
+    color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }

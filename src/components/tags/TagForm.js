@@ -43,10 +43,10 @@ export const TagForm = ({ setNeedForm, tag = {} }) => {
                     defaultValue={tag.tag}
                     onChange={(e) => setFormTag({ ...formTag, tag: e.target.value })} />
                 <div className="tag button--container">
-                    <button type="submit" title="Submit" className="tagFormSubmit--button">
+                    <button type="submit" title="Submit" className="profile-button">
                         {tag.id > 0 ? "✔" : "Add Tag"}
                     </button>
-                    <button type="button" title="Cancel" className="tagFormCancel--button"
+                    <button type="button" title="Cancel"  className="profile-button-cancel"
                         onClick={closeForm} >
                         {tag.id > 0 ? "❌" : "Cancel"}
                     </button>
