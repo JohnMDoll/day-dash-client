@@ -19,9 +19,12 @@ export const TagMap = ({ existingTags, resultTags = undefined }) => {
 
     useEffect(() => {
         if (existingTags) {
-        let tagCopy = [...existingTags]
-        tagCopy.forEach((tag) => {return tag.id})
-        setActiveTags(tagCopy)
+        const tagCopy = [...existingTags]
+        const tagIds = tagCopy.map((tag) => {
+            const tagId = tag.id
+            return tagId
+        })
+        setActiveTags(tagIds)
     }
     }, [existingTags]
     )
@@ -54,7 +57,7 @@ export const TagMap = ({ existingTags, resultTags = undefined }) => {
                 return <div className="mapped--tag" id={t.id} key={`tag-${t.id}`}>
                     <input
                         type={"checkbox"}
-                        defaultChecked={existingTags? existingTags.find(exTag => exTag === t.id): false}
+                        defaultChecked={existingTags? existingTags.find(exTag => exTag.id === t.id): false}
                         name={`tag--${t.id}`}
                         value={t.id}
                         onClick={tagCheck} />
