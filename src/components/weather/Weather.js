@@ -4,7 +4,7 @@ import "./weather.css"
 
 export const Weather = ({ friendId, setWeatherCondition }) => {
     const [weather, setWeather] = useState({})
-    // const weather = fetchIt(`https://walrus-app-777xe.ondigitalocean.app/weather`)
+
     useEffect(() => {
         if (!weather.hasOwnProperty('current')) {
             if (friendId) {

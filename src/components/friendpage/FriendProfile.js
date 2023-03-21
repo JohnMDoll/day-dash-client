@@ -63,6 +63,7 @@ export const FriendProfile = () => {
                 <h3 className="schedule--header">Events</h3>
                 {editingComment ?
                     <CommentForm
+                        setEvents={setEvents}
                         eventToChange={eventToChange}
                         setEventToChange={setEventToChange}
                         needCommentEditor={setEditingComment}
