@@ -24,16 +24,11 @@ export const Home = () => {
             .then(res => setEvents(res))
     }, [])
 
-    // useEffect(() => {
-    //     getUserEvents()
-    //         .then(res => setEvents(res))
-    // }, [editingEvent, editingComment])
-
     useEffect(() => {
         const condition = weatherCondition.toLowerCase();
         const body = document.body;
 
-        if (condition.includes("sunny")) {
+        if (condition.includes("sunny")  || condition.includes("clear")) {
             body.classList.add("sunny");
             body.classList.remove("rainy", "cloudy");
         } else if (condition.includes("rain") || condition.includes("storm")) {
@@ -46,10 +41,23 @@ export const Home = () => {
         }
     }, [weatherCondition]);
 
+    const Welcome = () => {
+        const time = new Date().getHours()
+        if (time < 12) {
+            return "Good Morning "
+        } else if (time < 18) {
+            return "Good Afternoon "
+        } else {
+            return "Good Evening "
+        }
+
+        return "Welcome "
+    }
+
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <div id="background"></div>
-        <h1>Welcome {user.firstName || "friend"}</h1>
+        <h1>{Welcome()} {user.firstName || "friend"}</h1>
         <article className="home--container">
             <section className="home weather--container" >
                 <h3 className="weather--header">Your Weather</h3>
