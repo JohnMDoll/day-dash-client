@@ -24,10 +24,10 @@ export const Home = () => {
             .then(res => setEvents(res))
     }, [])
 
-    useEffect(() => {
-        getUserEvents()
-            .then(res => setEvents(res))
-    }, [editingEvent, editingComment])
+    // useEffect(() => {
+    //     getUserEvents()
+    //         .then(res => setEvents(res))
+    // }, [editingEvent, editingComment])
 
     useEffect(() => {
         const condition = weatherCondition.toLowerCase();
@@ -46,8 +46,6 @@ export const Home = () => {
         }
     }, [weatherCondition]);
 
-
-
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <div id="background"></div>
@@ -61,6 +59,7 @@ export const Home = () => {
                 <h3 className="schedule--header">Your Events</h3>
                 {editingComment ?
                     <CommentForm
+                        setEvents={setEvents}
                         eventToChange={eventToChange}
                         setEventToChange={setEventToChange}
                         needCommentEditor={setEditingComment}
@@ -70,6 +69,7 @@ export const Home = () => {
                     : <></>}
                 {editingEvent ?
                     <EventForm
+                        setEvents={setEvents}
                         needEventEditor={setEditingEvent}
                         event={eventToChange}
                         setEventToChange={setEventToChange}

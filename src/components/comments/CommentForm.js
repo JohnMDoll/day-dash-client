@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { deleteComment, postComment, updateComment } from "../managers/CommentManager"
+import { getUserEvents } from "../managers/EventManager"
 import "./comment.css"
 
-export const CommentForm = ({ needCommentEditor, existingComment, setCommentToChange, eventToChange, setEventToChange }) => {
+export const CommentForm = ({ setEvents, needCommentEditor, existingComment, setCommentToChange, eventToChange, setEventToChange }) => {
     const user = JSON.parse(localStorage.getItem('dd_token'))
     const [comments, setComments] = useState(eventToChange.comments)
     const [comment, setComment] = useState({
@@ -23,19 +24,21 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
     }, [existingComment]
     )
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
 
         if (existingComment.hasOwnProperty("id")) {
-            updateComment(comment)
+            await updateComment(comment)
         }
         else {
-            postComment(comment)
+            await postComment(comment)
         }
         closeForm()
     }
 
-    const closeForm = () => {
+    const closeForm = async () => {
+        const res = await getUserEvents()
+        setEvents(res)
         setCommentToChange({ comment: "" }) //on cancel reset state
         setEventToChange({})
         needCommentEditor(false)
@@ -61,9 +64,9 @@ export const CommentForm = ({ needCommentEditor, existingComment, setCommentToCh
                                         {user.id === comment.commenter.id ? <>
                                             {/* <button className="comment--edit">✏</button> */}
                                             <button type="button" className="comment--delete"
-                                                onClick={() => {
-                                                    deleteComment(comment)
-                                                        .then(closeForm())
+                                                onClick={async () => {
+                                                    await deleteComment(comment)
+                                                    closeForm()
                                                 }}>
                                                 ❌
                                             </button>
