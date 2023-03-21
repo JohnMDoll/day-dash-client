@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { postNewEvent, updateEvent } from "../managers/EventManager"
+import { getUserEvents, postNewEvent, updateEvent } from "../managers/EventManager"
 import { TagMap } from "../tags/TagMap"
 import "./agenda.css"
 
-export const EventForm = ({ needEventEditor, setEventToChange, event = {}}) => {
+export const EventForm = ({ setEvents, needEventEditor, setEventToChange, event = {}}) => {
     const [eventTags, setEventTags] = useState([])
     const [formEvent, setFormEvent] = useState({
         name: "",
@@ -21,20 +21,21 @@ export const EventForm = ({ needEventEditor, setEventToChange, event = {}}) => {
     }, [event]
     )
 
-    const submitHandler =  (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
         
         if (event.hasOwnProperty("id")) {
-            updateEvent(formEvent)
+            await updateEvent(formEvent)
         }
         else {
-            postNewEvent(formEvent)
+            await postNewEvent(formEvent)
         }
-        setEventToChange({})
-        needEventEditor(false)
+        closeForm()
     }
 
-    const closeForm = () => {
+    const closeForm = async () => {
+        const res = await getUserEvents()
+        setEvents(res)
         setEventToChange({}) //on cancel, reset state to prep form in Add New case
         needEventEditor(false)
     }
