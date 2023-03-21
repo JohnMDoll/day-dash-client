@@ -25,7 +25,8 @@ h1 {
         2px -2px 0 #000,
         -2px 2px 0 #000,
         2px 2px 0 #000;
-    margin-bottom: 0px;
+    margin-block: 0px;
+    width: 100%;
 }
 
 h3 {
@@ -125,6 +126,7 @@ section.home.schedule--container {
         max-width: 30%;
     }
 }
+
 
 section.agenda {
     border: 2px solid black;
@@ -371,4 +373,10 @@ fieldset.comment {
 
 .friend--name {
     cursor: pointer;
+}
+
+@media (max-width: 300px) {
+    .home--container h1#welcome {
+        font-size: 48px;
+    }
 }

@@ -28,7 +28,7 @@ export const Home = () => {
         const condition = weatherCondition.toLowerCase();
         const body = document.body;
 
-        if (condition.includes("sunny")  || condition.includes("clear")) {
+        if (condition.includes("sunny") || condition.includes("clear")) {
             body.classList.add("sunny");
             body.classList.remove("rainy", "cloudy");
         } else if (condition.includes("rain") || condition.includes("storm")) {
@@ -50,15 +50,13 @@ export const Home = () => {
         } else {
             return "Good Evening "
         }
-
-        return "Welcome "
     }
 
     return <>
         {/* Modify the welcome message to say Good morning, evening, etc. */}
         <div id="background"></div>
-        <h1>{Welcome()} {user.firstName || "friend"}</h1>
         <article className="home--container">
+        <h1 id="welcome">{Welcome()} {user.firstName || "friend"}</h1>
             <section className="home weather--container" >
                 <h3 className="weather--header">Your Weather</h3>
                 <Weather setWeatherCondition={setWeatherCondition} />
