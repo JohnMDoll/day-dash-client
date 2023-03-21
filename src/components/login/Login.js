@@ -28,8 +28,8 @@ export const Login = () => {
     return <main className="container--login">
                 <div id="login-background"></div>
         <h1>Welcome to Day Dash</h1>
-                    <center><p>Ready to get started on your day? <br></br>
-                        Login or register now!</p></center>
+                    {/* <center><p>Ready to get started on your day? <br></br>
+                        Login or register now!</p></center> */}
         <section className="login form--container">
             <form className="login" onSubmit={submitHandler}>
                 <fieldset className="login">
