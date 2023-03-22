@@ -18,6 +18,7 @@ export const FriendProfile = () => {
     const [weatherCondition, setWeatherCondition] = useState("");
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         getFriender(frienderId)
             .then(res => setFriend(res))
 
@@ -52,7 +53,7 @@ export const FriendProfile = () => {
 
 
     return <>
-        <div id="background"></div>
+        <div id="background2"></div>
         <h1>{`${friend.name}` || "friend"}</h1>
         <article className="home--container">
             <section className="home weather--container">

@@ -53,7 +53,6 @@ export const Home = () => {
     }
 
     return <>
-        {/* Modify the welcome message to say Good morning, evening, etc. */}
         <div id="background"></div>
         <article className="home--container">
         <h1 id="welcome">{Welcome()} {user.firstName || "friend"}</h1>
