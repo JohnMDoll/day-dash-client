@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+input.event--search {
+  display: flex;
+  border-radius: 1000px;
+}
+
 .tag-span {
   background-color: #80cfa5;
   color: white;

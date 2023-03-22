@@ -1,12 +1,44 @@
+import { useEffect, useState } from "react"
 import { deleteEvent, getUserEvents } from "../managers/EventManager"
 import { timeFormatter } from "../utils/timeFormatter"
 import "./agenda.css"
 
 export const Agenda = ({ setEventToChange = undefined, setEditingEvent = undefined, events = [], setEvents = undefined, friend = false, setCommentToChange, setEditingComment }) => {
+    const [searchEvents, setSearchEvents] = useState([])
+
+    useEffect(() => {
+        setSearchEvents(events)
+    }, [events]
+    )
+
+    const searchedEvents = (query) => {
+        let searchResult = []
+        events.map(e => {
+            if (e.name.toLowerCase().includes(query.toLowerCase()) || 
+            e.description.toLowerCase().includes(query.toLowerCase()) || 
+            e.location.toLowerCase().includes(query.toLowerCase()) || 
+            e.tags.find(tag => tag.tag.toLowerCase().includes(query.toLowerCase()))) {
+                searchResult.push(e)
+            }
+            setSearchEvents(searchResult)
+        })
+    }
+
+    useEffect(() => {
+        const query = document.querySelector('#search').value
+        searchedEvents(query)
+    }, [events]
+    )
 
     return (<section className="agenda">
+        <input
+            type="search"
+            className="event--search"
+            id="search"
+            onChange={(e) => searchedEvents(e.target.value)}
+            placeholder="Search in tags, names, etc." />
         {
-            events.map((e) => {
+            searchEvents.map((e) => {
                 return (
                     <section className="event--container" key={`event--${e.id}`} id={e.id}>
                         <div className="details--container">
