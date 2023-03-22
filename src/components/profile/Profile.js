@@ -3,10 +3,10 @@ import { Friends } from "../friends/Friends"
 import "./profile.css"
 
 export const Profile = () => {
-    const user = JSON.parse(localStorage.getItem("dd_token"))
+  const user = JSON.parse(localStorage.getItem("dd_token"))
 
-    return <>
-<div className="background--container">
+  return <>
+    <div className="background--container">
       <h1>{user.firstName}'s Dash Management</h1>
       <article className="profile--container">
         <section className="friends--container">
@@ -19,5 +19,5 @@ export const Profile = () => {
         </section>
       </article>
     </div>
-    </>
+  </>
 }
