@@ -6,7 +6,7 @@ export const Profile = () => {
   const user = JSON.parse(localStorage.getItem("dd_token"))
 
   return <>
-    <div className="background--container">
+    <div className="background--container"></div>
       <h1>{user.firstName}'s Dash Management</h1>
       <article className="profile--container">
         <section className="friends--container">
@@ -18,6 +18,5 @@ export const Profile = () => {
           <Tags />
         </section>
       </article>
-    </div>
   </>
 }

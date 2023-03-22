@@ -46,8 +46,21 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 275%;
+    height: 100%;
     z-index: -1;
+}
+
+
+@media screen and (max-width:1105px) {
+    #background {
+        height: 160%;
+    }
+}
+
+@media screen and (max-width:648px) {
+    #background {
+        height: 260%;
+    }
 }
 
 #background2 {
@@ -55,8 +68,20 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 185%;
+    height: 100%;
     z-index: -1;
+}
+
+@media screen and (max-width:696px) {
+    #background2 {
+        height: 130%;
+    }
+}
+
+@media screen and (max-width:431px) {
+    #background2 {
+        height: 150%;
+    }
 }
 
 .sunny #background::before,
