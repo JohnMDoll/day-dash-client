@@ -16,10 +16,13 @@ section.tags {
     /* Add transparency */
     backdrop-filter: blur(10px);
     /* Add blur for frosted glass effect */
-    border-radius: 1vh;
+    border-radius: 20px;
     margin: 3px;
     padding-inline: 5px;
     padding: 15px;
+    border: 2px solid black;
+    max-height: 55vh;
+    overflow-y: auto;
 }
 
 .friend--box {
@@ -85,13 +88,6 @@ fieldset.email {
 
 .friend.form--field {
     margin-block: 3px;
-}
-
-article section.tags {
-    margin-top: 3px;
-    border: 2px solid black;
-    max-height: 55vh;
-    overflow-y: auto;
 }
 
 .tag--box {
