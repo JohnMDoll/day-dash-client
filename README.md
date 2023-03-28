@@ -1,8 +1,6 @@
 # [Day Dash](https://www.mydaydash.com/)
-https://www.mydaydash.com/
+###### * An app to get your day started * https://www.mydaydash.com/
 
-###### * An app to get your day started  *
-  
 ## Project Overview
 
 Day Dash is intended to be used in the morning or evening to quickly see what the rest of the day, or tomorrow, has in store.
