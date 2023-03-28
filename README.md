@@ -1,4 +1,4 @@
-# [[Day Dash](https://www.mydaydash.com/)]
+# [Day Dash](https://www.mydaydash.com/)
 https://www.mydaydash.com/
 
 ###### * An app to get your day started  *
