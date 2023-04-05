@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-Day Dash is intended to be used in the morning or evening to quickly see what the rest of the day, or tomorrow, has in store.
+Day Dash is a personal dashboard intended to be used in the morning or evening to quickly see what the rest of the day, or tomorrow, has in store.
 
 Day Dash is minimalistic. Menus, buttons and forms are all as compact as possible.
 
